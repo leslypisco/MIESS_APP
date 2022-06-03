@@ -3,7 +3,7 @@ Proyecto grupal encagado del ADULTO MAYOR
 
 Integrantes:
 
-Junior Zambrano
-Danny Bedoy
-Helen Alcivar
+Junior Zambrano;
+Danny Bedoya;
+Helen Alcivar;
 Jefferson Guaman
