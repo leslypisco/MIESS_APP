@@ -2,6 +2,7 @@
 Proyecto grupal encagado del ADULTO MAYOR
 
 Integrantes G1:
+
 Bismark Castro
 Omar Ferrin
 Selena Enriquez
