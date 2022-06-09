@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { RegistrarTecnicoComponent } from './supervisor/registrar-tecnico/registrar-tecnico.component';
 import { ListarTecnicosComponent } from './supervisor/listar-tecnicos/listar-tecnicos.component';
 import { InfoSupervisorComponent } from './supervisor/info-supervisor/info-supervisor.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +16,8 @@ import { InfoSupervisorComponent } from './supervisor/info-supervisor/info-super
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
