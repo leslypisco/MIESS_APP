@@ -22,6 +22,7 @@ export class TestEscalaYesavageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.start();
   }
 
   start(){
@@ -84,9 +85,14 @@ export class TestEscalaYesavageComponent implements OnInit {
     }
   }
 
+  mostrar(selector:any, visible:boolean) {
+    var elemento = document.querySelector(selector);
+    console.log(elemento);
+    if (elemento != null) {
+      elemento.style.display = visible?'block':'none';
+    }
+  }
+
+
 }
-interface crono{
-  hora:number;
-  minutos: number;
-  segundos: number;
-}
+
