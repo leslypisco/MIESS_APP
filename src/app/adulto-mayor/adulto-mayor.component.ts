@@ -10,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ADULTOMAYORComponent implements OnInit {
 
-  constructor() { }
+  ImagePath: string;
+  constructor() { 
+    //image location
+    this.ImagePath = 'https://i.eldiario.com.ec/fotos-manabi-ecuador/2009/mies.png'
+  }
 
   ngOnInit(): void {
 

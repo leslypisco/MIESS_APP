@@ -1,48 +1,51 @@
-<mat-toolbar>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>My App</span>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
-    </button>
-  </mat-toolbar>
+
+
+<div class="container">
+
+    <header>
+        <div class="topnav">
+            
+            <a class="active" href="#home"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+              </svg></a>
+              <h3 class="enca">Perfil Usuario</h3> 
+              <img class="image" [src] ="ImagePath" 
+             style="width: 60px;height: 40px;">
+          </div>
+    </header>
 
 <form class="formulario">
     
-    <label>ABREU HERNANDEZ LUIS FELIPE</label><br>
-
-    <p>
-        Cédula:<br> 
-        <label>
-            <dd> 2350313987
-        </label>
-    <p>
-        Dirección:<br> 
-        <label>
-            <dd> Av. Quevedo - KM 5
-        </label>
-    </p>
-    <p>
-        Autoidentificación:<br> 
-        <label>
-            <dd> Montubio
-        </label>
-    </p>
-    <p>
-        Sexo:<br> 
-        <label>
-            <dd>Masculino
-        </label>
-    </p>
-    <p>
-        Edad:<br> 
-        <label>
-            <dd>75 años
-        </label>
-    </p>
+    <h3 class="titles">ABREU HERNANDEZ LUIS FELIPE</h3><br>
+    <div  >
+    <div >
+        <h4 class="titles">Cédula:</h4> 
+        <h4 class="dates">
+             2350313987 
+        </h4>
+    </div> 
+    <div>
+       <h4 class="titles">Dirección: </h4> 
+        <h4 class="dates"> Av. Quevedo - KM 5</h4>
+    </div>
+    <div>
+        <h4 class="titles">Autoidentificación:</h4> 
+        <h4 class="dates">
+            Montubio
+        </h4>
+    </div>
+    <div>
+       <h4 class="titles">Sexo:</h4>
+        <h4 class="dates">
+            Masculino
+        </h4>
+    </div>
+    <div>
+        <h4 class="titles">Edad:</h4> 
+        <h4 class="dates">
+            75 años
+        </h4>
+    </div>
+</div>
 </form> 
+</div>
