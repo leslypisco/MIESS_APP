@@ -5,9 +5,6 @@
 
 </div>
 <div class="d-grid col-11 col-sm-6 mx-auto mt-5 mb-4">
-
-
-
     <form [formGroup]="form" novalidate (ngSubmit)="save($event)" class="d-grid col-11 col-sm-6 mx-auto">
         <p style="text-align: right; margin-right: 10%;"><b>Tiempo transcurrido: {{hora}}:{{minutos}}:{{segundos}} </b>
         </p><button hidden (click)="start()">Empezar</button>
