@@ -7,40 +7,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarTecnicosComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+
+    
+   }
 
   ngOnInit(): void {
+    
   }
-  usuarios = {
-    persona1 : {
-      'id': 1,
-      'nombre': 'CRAVIOTO QUINTANA ALEJANDRO RAFAEL',
-      'telefono': 1234567890,
+  
+  people = {
+    person : {
+      'name': 'CRAVIOTO QUINTANA ALEJANDRO RAFAEL',
+      'phone': 1234567890,
   },
-  persona2 : {
-    'id': 2,
-    'nombre': 'ESCOBAR BRIONES CARALINA LUCÍA',
-    'telefono': 6857493849,
+  person1 : {
+    'name': 'ESCOBAR BRIONES CARALINA LUCÍA',
+    'phone': 6857493849,
   },
-  persona3 : {
-    'id': 3,
-    'nombre': 'BARROSO VILLA JUAN',
-    'telefono': 5837584939,
+  person2 : {
+    'name': 'BARROSO VILLA JUAN',
+    'phone': 5837584939,
   },
-  persona4 : {
-    'id': 4,
-    'nombre': 'ESTRADA GARCÍA MARÍA TERESA',
-    'telefono': 6758495839,
+  person3 : {
+    'name': 'ESTRADA GARCÍA MARÍA TERESA',
+    'phone': 6758495839,
   },
-  persona5 : {
-    'id': 5,
-    'nombre': 'BECKER FAUSER INGEBORG DOROTHEA MARÍA',
-    'telefono': 5847394839,
+  person4 : {
+    'name': 'BECKER FAUSER INGEBORG DOROTHEA MARÍA',
+    'phone': 5847394839,
   },
-  persona6 : {
-    'id': 6,
-    'nombre': 'FURUYA MEGURO MARÍA',
-    'telefono': 5739483939,
+  person5 : {
+    'name': 'FURUYA MEGURO MARÍA',
+    'phone': 5739483939,
   }
   }; 
+  //pasamos un objeto y nos devuelve un array
+  data = Object.values(this.people);
+
+
 }
