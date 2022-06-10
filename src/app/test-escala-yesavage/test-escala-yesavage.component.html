@@ -1,99 +1,262 @@
-<body>
-    <div>
-        <form>
+<div>
+    <form [formGroup]="form" novalidate (ngSubmit)="save($event)">
+        <div>
+            <label>1. ¿Esta Ud. básicamente satisfecho con su vida?</label>
             <div>
-                <label>1. ¿Esta Ud. básicamente satisfecho con su vida?</label>
-                <input type="radio" name="opcion" value="si">Si
-                <input type="radio" name="opcion" value="no">No
+                <p>
+                    <input type="radio" name="pregunta1" value="si" formControlName="pregunta1">Si
+                </p>
+                <p>
+                    <input type="radio" name="pregunta1" value="no" formControlName="pregunta1">No
+                </p>
             </div>
+            <div *ngIf="form.get('pregunta1')?.errors && form.get('pregunta1')?.invalid && form.get('pregunta1')?.touched">
+                <p class="error-rad" *ngIf="form.get('pregunta1')?.hasError('required')">
+                    Debe seleccionar una opción.
+                </p>
+            </div>
+        </div>
 
+        <div>
+            <label>2. ¿Ha disminuido o abandonado muchos de sus intereses o actividades previas?</label>
             <div>
-                <label>2. ¿Ha disminuido o abandonado muchos de sus intereses o actividades previas?</label>
-                <input type="radio" name="opcion" value="si">Si
-                <input type="radio" name="opcion" value="no">No
+                <p>
+                    <input type="radio" name="pregunta2" value="si" formControlName="pregunta2">Si
+                </p>
+                <p>
+                    <input type="radio" name="pregunta2" value="no" formControlName="pregunta2">No
+                </p>
             </div>
+            <div *ngIf="form.get('pregunta2')?.errors && form.get('pregunta2')?.invalid && form.get('pregunta2')?.touched">
+                <p class="error-rad" *ngIf="form.get('pregunta2')?.hasError('required')">
+                    Debe seleccionar una opción.
+                </p>
+            </div>
+        </div>
 
+        <div>
+            <label>3. ¿Siente que su vida está vacía?</label>
             <div>
-                <label>3. ¿Siente que su vida está vacía?</label>
-                <input type="radio" name="opcion" value="si">Si
-                <input type="radio" name="opcion" value="no">No
+                <p>
+                    <input type="radio" name="pregunta3" value="si" formControlName="pregunta3">Si
+                </p>
+                <p>
+                    <input type="radio" name="pregunta3" value="no" formControlName="pregunta3">No
+                </p>
             </div>
+            <div *ngIf="form.get('pregunta3')?.errors && form.get('pregunta3')?.invalid && form.get('pregunta3')?.touched">
+                <p class="error-rad" *ngIf="form.get('pregunta3')?.hasError('required')">
+                    Debe seleccionar una opción.
+                </p>
+            </div>
+        </div>
 
+        <div>
+            <label>4. ¿Se siente aburrido frecuentemente?</label>
             <div>
-                <label>4. ¿Se siente aburrido frecuentemente?</label>
-                <input type="radio" name="opcion" value="si">Si
-                <input type="radio" name="opcion" value="no">No
+                <p>
+                    <input type="radio" name="pregunta4" value="si" formControlName="pregunta4">Si
+                </p>
+                <p>
+                    <input type="radio" name="pregunta4" value="no" formControlName="pregunta4">No
+                </p>
             </div>
+            <div *ngIf="form.get('pregunta4')?.errors && form.get('pregunta4')?.invalid && form.get('pregunta4')?.touched">
+                <p class="error-rad" *ngIf="form.get('pregunta4')?.hasError('required')">
+                    Debe seleccionar una opción.
+                </p>
+            </div>
+        </div>
 
+        <div>
+            <label>5. ¿Está Ud. de buen ánimo la mayoría del tiempo?</label>
             <div>
-                <label>5. ¿Está Ud. de buen ánimo la mayoría del tiempo?</label>
-                <input type="radio" name="opcion" value="si">Si
-                <input type="radio" name="opcion" value="no">No
+                <p>
+                    <input type="radio" name="pregunta5" value="si" formControlName="pregunta5">Si
+                </p>
+                <p>
+                    <input type="radio" name="pregunta5" value="no" formControlName="pregunta5">No
+                </p>
             </div>
+            <div *ngIf="form.get('pregunta5')?.errors && form.get('pregunta5')?.invalid && form.get('pregunta5')?.touched">
+                <p class="error-rad" *ngIf="form.get('pregunta5')?.hasError('required')">
+                    Debe seleccionar una opción.
+                </p>
+            </div>
+        </div>
 
+        <div>
+            <label>6. ¿Está preocupado o teme que algo malo le va a pasar?</label>
             <div>
-                <label>6. ¿Está preocupado o teme que algo malo le va a pasar?</label>
-                <input type="radio" name="opcion" value="si">Si
-                <input type="radio" name="opcion" value="no">No
+                <p>
+                    <input type="radio" name="pregunta6" value="si" formControlName="pregunta6">Si
+                </p>
+                <p>
+                    <input type="radio" name="pregunta6" value="no" formControlName="pregunta6">No
+                </p>
             </div>
+            <div *ngIf="form.get('pregunta6')?.errors && form.get('pregunta6')?.invalid && form.get('pregunta6')?.touched">
+                <p class="error-rad" *ngIf="form.get('pregunta6')?.hasError('required')">
+                    Debe seleccionar una opción.
+                </p>
+            </div>
+        </div>
 
+        <div>
+            <label>7. ¿Se siente feliz la mayor parte del tiempo?</label>
             <div>
-                <label>7. ¿Se siente feliz la mayor parte del tiempo?</label>
-                <input type="radio" name="opcion" value="si">Si
-                <input type="radio" name="opcion" value="no">No
+                <p>
+                    <input type="radio" name="pregunta7" value="si" formControlName="pregunta7">Si
+                </p>
+                <p>
+                    <input type="radio" name="pregunta7" value="no" formControlName="pregunta7">No
+                </p>
             </div>
+            <div *ngIf="form.get('pregunta7')?.errors && form.get('pregunta7')?.invalid && form.get('pregunta7')?.touched">
+                <p class="error-rad" *ngIf="form.get('pregunta7')?.hasError('required')">
+                    Debe seleccionar una opción.
+                </p>
+            </div>
+        </div>
 
+        <div>
+            <label>8. ¿Se siente con frecuencia desamparado?</label>
             <div>
-                <label>8. ¿Se siente con frecuencia desamparado?</label>
-                <input type="radio" name="opcion" value="si">Si
-                <input type="radio" name="opcion" value="no">No
+                <p>
+                    <input type="radio" name="pregunta8" value="si" formControlName="pregunta8">Si
+                </p>
+                <p>
+                    <input type="radio" name="pregunta8" value="no" formControlName="pregunta8">No
+                </p>
             </div>
+            <div *ngIf="form.get('pregunta8')?.errors && form.get('pregunta8')?.invalid && form.get('pregunta8')?.touched">
+                <p class="error-rad" *ngIf="form.get('pregunta8')?.hasError('required')">
+                    Debe seleccionar una opción.
+                </p>
+            </div>
+        </div>
 
+        <div>
+            <label>9. ¿Prefiere Ud. quedarse en casa a salir a hacer cosas nuevas?</label>
             <div>
-                <label>9. ¿Prefiere Ud. quedarse en casa a salir a hacer cosas nuevas?</label>
-                <input type="radio" name="opcion" value="si">Si
-                <input type="radio" name="opcion" value="no">No
+                <p>
+                    <input type="radio" name="pregunta9" value="si" formControlName="pregunta9">Si
+                </p>
+                <p>
+                    <input type="radio" name="pregunta9" value="no" formControlName="pregunta9">No
+                </p>
             </div>
+            <div *ngIf="form.get('pregunta9')?.errors && form.get('pregunta9')?.invalid && form.get('pregunta9')?.touched">
+                <p class="error-rad" *ngIf="form.get('pregunta9')?.hasError('required')">
+                    Debe seleccionar una opción.
+                </p>
+            </div>
+        </div>
 
+        <div>
+            <label>10. ¿Siente Ud. que tiene más problemas con su memoria que otras personas de su edad?</label>
             <div>
-                <label>10. ¿Siente Ud. que tiene más problemas con su memoria que otras personas de su edad?</label>
-                <input type="radio" name="opcion" value="si">Si
-                <input type="radio" name="opcion" value="no">No
+                <p>
+                    <input type="radio" name="pregunta10" value="si" formControlName="pregunta10">Si
+                </p>
+                <p>
+                    <input type="radio" name="pregunta10" value="no" formControlName="pregunta10">No
+                </p>
             </div>
+            <div *ngIf="form.get('pregunta10')?.errors && form.get('pregunta10')?.invalid && form.get('pregunta10')?.touched">
+                <p class="error-rad" *ngIf="form.get('pregunta10')?.hasError('required')">
+                    Debe seleccionar una opción.
+                </p>
+            </div>
+        </div>
 
+        <div>
+            <label>11. ¿Cree Ud. que es maravilloso estar vivo?</label>
             <div>
-                <label>11. ¿Cree Ud. que es maravilloso estar vivo?</label>
-                <input type="radio" name="opcion" value="si">Si
-                <input type="radio" name="opcion" value="no">No
+                <p>
+                    <input type="radio" name="pregunta11" value="si" formControlName="pregunta11">Si
+                </p>
+                <p>
+                    <input type="radio" name="pregunta11" value="no" formControlName="pregunta11">No
+                </p>
             </div>
+            <div *ngIf="form.get('pregunta11')?.errors && form.get('pregunta11')?.invalid && form.get('pregunta11')?.touched">
+                <p class="error-rad" *ngIf="form.get('pregunta11')?.hasError('required')">
+                    Debe seleccionar una opción.
+                </p>
+            </div>
+        </div>
 
+        <div>
+            <label>12. ¿Se siente inútil o despreciable como está Ud. actualmente?</label>
             <div>
-                <label>12. ¿Se siente inútil o despreciable como está Ud. actualmente?</label>
-                <input type="radio" name="opcion" value="si">Si
-                <input type="radio" name="opcion" value="no">No
+                <p>
+                    <input type="radio" name="pregunta12" value="si" formControlName="pregunta12">Si
+                </p>
+                <p>
+                    <input type="radio" name="pregunta12" value="no" formControlName="pregunta12">No
+                </p>
             </div>
+            <div *ngIf="form.get('pregunta12')?.errors && form.get('pregunta12')?.invalid && form.get('pregunta12')?.touched">
+                <p class="error-rad" *ngIf="form.get('pregunta12')?.hasError('required')">
+                    Debe seleccionar una opción.
+                </p>
+            </div>
+        </div>
 
+        <div>
+            <label>13. ¿Se siente lleno de energía?</label>
             <div>
-                <label>13. ¿Se siente lleno de energía?</label>
-                <input type="radio" name="opcion" value="si">Si
-                <input type="radio" name="opcion" value="no">No
+                <p>
+                    <input type="radio" name="pregunta13" value="si" formControlName="pregunta13">Si
+                </p>
+                <p>
+                    <input type="radio" name="pregunta13" value="no" formControlName="pregunta13">No
+                </p>
             </div>
+            <div *ngIf="form.get('pregunta13')?.errors && form.get('pregunta13')?.invalid && form.get('pregunta13')?.touched">
+                <p class="error-rad" *ngIf="form.get('pregunta13')?.hasError('required')">
+                    Debe seleccionar una opción.
+                </p>
+            </div>
+        </div>
 
+        <div>
+            <label>14. ¿Se encuentra sin esperanza ante su situación actual?</label>
             <div>
-                <label>14. ¿Se encuentra sin esperanza ante su situación actual?</label>
-                <input type="radio" name="opcion" value="si">Si
-                <input type="radio" name="opcion" value="no">No
+                <p>
+                    <input type="radio" name="pregunta14" value="si" formControlName="pregunta14">Si
+                </p>
+                <p>
+                    <input type="radio" name="pregunta14" value="no" formControlName="pregunta14">No
+                </p>
             </div>
+            <div *ngIf="form.get('pregunta14')?.errors && form.get('pregunta14')?.invalid && form.get('pregunta14')?.touched">
+                <p class="error-rad" *ngIf="form.get('pregunta14')?.hasError('required')">
+                    Debe seleccionar una opción.
+                </p>
+            </div>
+        </div>
 
+        <div>
+            <label>15. ¿Cree Ud. que las otras personas están en general mejor que Usted?</label>
             <div>
-                <label>15. ¿Cree Ud. que las otras personas están en general mejor que Usted?</label>
-                <input type="radio" name="opcion" value="si">Si
-                <input type="radio" name="opcion" value="no">No
+                <p>
+                    <input type="radio" name="pregunta15" value="si" formControlName="pregunta15">Si
+                </p>
+                <p>
+                    <input type="radio" name="pregunta15" value="no" formControlName="pregunta15">No
+                </p>
             </div>
+            <div *ngIf="form.get('pregunta15')?.errors && form.get('pregunta15')?.invalid && form.get('pregunta15')?.touched">
+                <p class="error-rad" *ngIf="form.get('pregunta15')?.hasError('required')">
+                    Debe seleccionar una opción.
+                </p>
+            </div>
+        </div>
 
-            <div>
-                <button>Enviar</button>
-            </div>
-        </form>
-    </div>
-</body>
+        <div>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+</div>
