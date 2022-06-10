@@ -1,15 +1,16 @@
-<div>
-    <form [formGroup]="form" novalidate (ngSubmit)="save($event)">
-        <div>
-            <b><label>1. ¿Esta Ud. básicamente satisfecho con su vida?</label></b>
-            <div>
-                <br>
-                <p>
-                    <input type="radio" name="pregunta1" value="si" formControlName="pregunta1">Si
-                </p>
-                <p>
-                    <input type="radio" name="pregunta1" value="no" formControlName="pregunta1">No
-                </p>
+<div class="container" class="mt-3 mb-4">
+    <form [formGroup]="form" novalidate (ngSubmit)="save($event)" class="d-grid col-11 col-sm-6 mx-auto">
+        <div class="sec-preg">
+            <label class="pregunta">1. ¿Esta Ud. básicamente satisfecho con su vida?</label>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta1" value="si" formControlName="pregunta1">
+                    <label class="form-check-label">Si</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta1" value="no" formControlName="pregunta1">
+                    <label class="form-check-label">No</label>
+                </div>
             </div>
             <div *ngIf="form.get('pregunta1')?.errors && form.get('pregunta1')?.invalid && form.get('pregunta1')?.touched">
                 <p class="error-rad" *ngIf="form.get('pregunta1')?.hasError('required')">
@@ -18,16 +19,17 @@
             </div>
         </div>
 
-        <div>
-            <b><label>2. ¿Ha disminuido o abandonado muchos de sus intereses o actividades previas?</label></b>
-            <div>
-                <br>
-                <p>
-                    <input type="radio" name="pregunta2" value="si" formControlName="pregunta2">Si
-                </p>
-                <p>
-                    <input type="radio" name="pregunta2" value="no" formControlName="pregunta2">No
-                </p>
+        <div class="sec-preg">
+            <label class="pregunta">2. ¿Ha disminuido o abandonado muchos de sus intereses o actividades previas?</label>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta2" value="si" formControlName="pregunta2">
+                    <label class="form-check-label">Si</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta2" value="no" formControlName="pregunta2">
+                    <label class="form-check-label">No</label>
+                </div>
             </div>
             <div *ngIf="form.get('pregunta2')?.errors && form.get('pregunta2')?.invalid && form.get('pregunta2')?.touched">
                 <p class="error-rad" *ngIf="form.get('pregunta2')?.hasError('required')">
@@ -36,16 +38,17 @@
             </div>
         </div>
 
-        <div>
-            <b><label>3. ¿Siente que su vida está vacía?</label></b>
-            <div>
-                <br>
-                <p>
-                    <input type="radio" name="pregunta3" value="si" formControlName="pregunta3">Si
-                </p>
-                <p>
-                    <input type="radio" name="pregunta3" value="no" formControlName="pregunta3">No
-                </p>
+        <div class="sec-preg">
+            <label class="pregunta">3. ¿Siente que su vida está vacía?</label>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta3" value="si" formControlName="pregunta3">
+                    <label class="form-check-label">Si</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta3" value="no" formControlName="pregunta3">
+                    <label class="form-check-label">No</label>
+                </div>
             </div>
             <div *ngIf="form.get('pregunta3')?.errors && form.get('pregunta3')?.invalid && form.get('pregunta3')?.touched">
                 <p class="error-rad" *ngIf="form.get('pregunta3')?.hasError('required')">
@@ -54,16 +57,17 @@
             </div>
         </div>
 
-        <div>
-            <b><label>4. ¿Se siente aburrido frecuentemente?</label></b>
-            <div>
-                <br>
-                <p>
-                    <input type="radio" name="pregunta4" value="si" formControlName="pregunta4">Si
-                </p>
-                <p>
-                    <input type="radio" name="pregunta4" value="no" formControlName="pregunta4">No
-                </p>
+        <div class="sec-preg">
+            <label class="pregunta">4. ¿Se siente aburrido frecuentemente?</label>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta4" value="si" formControlName="pregunta4">
+                    <label class="form-check-label">Si</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta4" value="no" formControlName="pregunta4">
+                    <label class="form-check-label">No</label>
+                </div>
             </div>
             <div *ngIf="form.get('pregunta4')?.errors && form.get('pregunta4')?.invalid && form.get('pregunta4')?.touched">
                 <p class="error-rad" *ngIf="form.get('pregunta4')?.hasError('required')">
@@ -72,16 +76,17 @@
             </div>
         </div>
 
-        <div>
-            <b><label>5. ¿Está Ud. de buen ánimo la mayoría del tiempo?</label></b>
-            <div>
-                <br>
-                <p>
-                    <input type="radio" name="pregunta5" value="si" formControlName="pregunta5">Si
-                </p>
-                <p>
-                    <input type="radio" name="pregunta5" value="no" formControlName="pregunta5">No
-                </p>
+        <div class="sec-preg">
+            <label class="pregunta">5. ¿Está Ud. de buen ánimo la mayoría del tiempo?</label>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta5" value="si" formControlName="pregunta5">
+                    <label class="form-check-label">Si</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta5" value="no" formControlName="pregunta5">
+                    <label class="form-check-label">No</label>
+                </div>
             </div>
             <div *ngIf="form.get('pregunta5')?.errors && form.get('pregunta5')?.invalid && form.get('pregunta5')?.touched">
                 <p class="error-rad" *ngIf="form.get('pregunta5')?.hasError('required')">
@@ -90,16 +95,17 @@
             </div>
         </div>
 
-        <div>
-            <b><label>6. ¿Está preocupado o teme que algo malo le va a pasar?</label></b>
-            <div>
-                <br>
-                <p>
-                    <input type="radio" name="pregunta6" value="si" formControlName="pregunta6">Si
-                </p>
-                <p>
-                    <input type="radio" name="pregunta6" value="no" formControlName="pregunta6">No
-                </p>
+        <div class="sec-preg">
+            <label class="pregunta">6. ¿Está preocupado o teme que algo malo le va a pasar?</label>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta6" value="si" formControlName="pregunta6">
+                    <label class="form-check-label">Si</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta6" value="no" formControlName="pregunta6">
+                    <label class="form-check-label">No</label>
+                </div>
             </div>
             <div *ngIf="form.get('pregunta6')?.errors && form.get('pregunta6')?.invalid && form.get('pregunta6')?.touched">
                 <p class="error-rad" *ngIf="form.get('pregunta6')?.hasError('required')">
@@ -108,16 +114,17 @@
             </div>
         </div>
 
-        <div>
-            <b><label>7. ¿Se siente feliz la mayor parte del tiempo?</label></b>
-            <div>
-                <br>
-                <p>
-                    <input type="radio" name="pregunta7" value="si" formControlName="pregunta7">Si
-                </p>
-                <p>
-                    <input type="radio" name="pregunta7" value="no" formControlName="pregunta7">No
-                </p>
+        <div class="sec-preg">
+            <label class="pregunta">7. ¿Se siente feliz la mayor parte del tiempo?</label>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta7" value="si" formControlName="pregunta7">
+                    <label class="form-check-label">Si</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta7" value="no" formControlName="pregunta7">
+                    <label class="form-check-label">No</label>
+                </div>
             </div>
             <div *ngIf="form.get('pregunta7')?.errors && form.get('pregunta7')?.invalid && form.get('pregunta7')?.touched">
                 <p class="error-rad" *ngIf="form.get('pregunta7')?.hasError('required')">
@@ -126,16 +133,17 @@
             </div>
         </div>
 
-        <div>
-            <b><label>8. ¿Se siente con frecuencia desamparado?</label></b>
-            <div>
-                <br>
-                <p>
-                    <input type="radio" name="pregunta8" value="si" formControlName="pregunta8">Si
-                </p>
-                <p>
-                    <input type="radio" name="pregunta8" value="no" formControlName="pregunta8">No
-                </p>
+        <div class="sec-preg">
+            <label class="pregunta">8. ¿Se siente con frecuencia desamparado?</label>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta8" value="si" formControlName="pregunta8">
+                    <label class="form-check-label">Si</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta8" value="no" formControlName="pregunta8">
+                    <label class="form-check-label">No</label>
+                </div>
             </div>
             <div *ngIf="form.get('pregunta8')?.errors && form.get('pregunta8')?.invalid && form.get('pregunta8')?.touched">
                 <p class="error-rad" *ngIf="form.get('pregunta8')?.hasError('required')">
@@ -144,16 +152,17 @@
             </div>
         </div>
 
-        <div>
-            <b><label>9. ¿Prefiere Ud. quedarse en casa a salir a hacer cosas nuevas?</label></b>
-            <div>
-                <br>
-                <p>
-                    <input type="radio" name="pregunta9" value="si" formControlName="pregunta9">Si
-                </p>
-                <p>
-                    <input type="radio" name="pregunta9" value="no" formControlName="pregunta9">No
-                </p>
+        <div class="sec-preg">
+            <label class="pregunta">9. ¿Prefiere Ud. quedarse en casa a salir a hacer cosas nuevas?</label>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta9" value="si" formControlName="pregunta9">
+                    <label class="form-check-label">Si</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta9" value="no" formControlName="pregunta9">
+                    <label class="form-check-label">No</label>
+                </div>
             </div>
             <div *ngIf="form.get('pregunta9')?.errors && form.get('pregunta9')?.invalid && form.get('pregunta9')?.touched">
                 <p class="error-rad" *ngIf="form.get('pregunta9')?.hasError('required')">
@@ -162,16 +171,17 @@
             </div>
         </div>
 
-        <div>
-            <b><label>10. ¿Siente Ud. que tiene más problemas con su memoria que otras personas de su edad?</label></b>
-            <div>
-                <br>
-                <p>
-                    <input type="radio" name="pregunta10" value="si" formControlName="pregunta10">Si
-                </p>
-                <p>
-                    <input type="radio" name="pregunta10" value="no" formControlName="pregunta10">No
-                </p>
+        <div class="sec-preg">
+            <label class="pregunta">10. ¿Siente Ud. que tiene más problemas con su memoria que otras personas de su edad?</label>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta10" value="si" formControlName="pregunta10">
+                    <label class="form-check-label">Si</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta10" value="no" formControlName="pregunta10">
+                    <label class="form-check-label">No</label>
+                </div>
             </div>
             <div *ngIf="form.get('pregunta10')?.errors && form.get('pregunta10')?.invalid && form.get('pregunta10')?.touched">
                 <p class="error-rad" *ngIf="form.get('pregunta10')?.hasError('required')">
@@ -180,16 +190,17 @@
             </div>
         </div>
 
-        <div>
-            <b><label>11. ¿Cree Ud. que es maravilloso estar vivo?</label></b>
-            <div>
-                <br>
-                <p>
-                    <input type="radio" name="pregunta11" value="si" formControlName="pregunta11">Si
-                </p>
-                <p>
-                    <input type="radio" name="pregunta11" value="no" formControlName="pregunta11">No
-                </p>
+        <div class="sec-preg">
+            <label class="pregunta">11. ¿Cree Ud. que es maravilloso estar vivo?</label>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta11" value="si" formControlName="pregunta11">
+                    <label class="form-check-label">Si</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta11" value="no" formControlName="pregunta11">
+                    <label class="form-check-label">No</label>
+                </div>
             </div>
             <div *ngIf="form.get('pregunta11')?.errors && form.get('pregunta11')?.invalid && form.get('pregunta11')?.touched">
                 <p class="error-rad" *ngIf="form.get('pregunta11')?.hasError('required')">
@@ -198,16 +209,17 @@
             </div>
         </div>
 
-        <div>
-            <b><label>12. ¿Se siente inútil o despreciable como está Ud. actualmente?</label></b>
-            <div>
-                <br>
-                <p>
-                    <input type="radio" name="pregunta12" value="si" formControlName="pregunta12">Si
-                </p>
-                <p>
-                    <input type="radio" name="pregunta12" value="no" formControlName="pregunta12">No
-                </p>
+        <div class="sec-preg">
+            <label class="pregunta">12. ¿Se siente inútil o despreciable como está Ud. actualmente?</label>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta12" value="si" formControlName="pregunta12">
+                    <label class="form-check-label">Si</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta12" value="no" formControlName="pregunta12">
+                    <label class="form-check-label">No</label>
+                </div>
             </div>
             <div *ngIf="form.get('pregunta12')?.errors && form.get('pregunta12')?.invalid && form.get('pregunta12')?.touched">
                 <p class="error-rad" *ngIf="form.get('pregunta12')?.hasError('required')">
@@ -216,16 +228,17 @@
             </div>
         </div>
 
-        <div>
-            <b><label>13. ¿Se siente lleno de energía?</label></b>
-            <div>
-                <br>
-                <p>
-                    <input type="radio" name="pregunta13" value="si" formControlName="pregunta13">Si
-                </p>
-                <p>
-                    <input type="radio" name="pregunta13" value="no" formControlName="pregunta13">No
-                </p>
+        <div class="sec-preg">
+            <label class="pregunta">13. ¿Se siente lleno de energía?</label>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta13" value="si" formControlName="pregunta13">
+                    <label class="form-check-label">Si</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta13" value="no" formControlName="pregunta13">
+                    <label class="form-check-label">No</label>
+                </div>
             </div>
             <div *ngIf="form.get('pregunta13')?.errors && form.get('pregunta13')?.invalid && form.get('pregunta13')?.touched">
                 <p class="error-rad" *ngIf="form.get('pregunta13')?.hasError('required')">
@@ -234,16 +247,17 @@
             </div>
         </div>
 
-        <div>
-            <b><label>14. ¿Se encuentra sin esperanza ante su situación actual?</label></b>
-            <div>
-                <br>
-                <p>
-                    <input type="radio" name="pregunta14" value="si" formControlName="pregunta14">Si
-                </p>
-                <p>
-                    <input type="radio" name="pregunta14" value="no" formControlName="pregunta14">No
-                </p>
+        <div class="sec-preg">
+            <label class="pregunta">14. ¿Se encuentra sin esperanza ante su situación actual?</label>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta14" value="si" formControlName="pregunta14">
+                    <label class="form-check-label">Si</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta14" value="no" formControlName="pregunta14">
+                    <label class="form-check-label">No</label>
+                </div>
             </div>
             <div *ngIf="form.get('pregunta14')?.errors && form.get('pregunta14')?.invalid && form.get('pregunta14')?.touched">
                 <p class="error-rad" *ngIf="form.get('pregunta14')?.hasError('required')">
@@ -252,16 +266,17 @@
             </div>
         </div>
 
-        <div>
-            <b><label>15. ¿Cree Ud. que las otras personas están en general mejor que Usted?</label></b>
-            <div>
-                <br>
-                <p>
-                    <input type="radio" name="pregunta15" value="si" formControlName="pregunta15">Si
-                </p>
-                <p>
-                    <input type="radio" name="pregunta15" value="no" formControlName="pregunta15">No
-                </p>
+        <div class="sec-preg">
+            <label class="pregunta">15. ¿Cree Ud. que las otras personas están en general mejor que Usted?</label>
+            <div class="form-check">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta15" value="si" formControlName="pregunta15">
+                    <label class="form-check-label">Si</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="pregunta15" value="no" formControlName="pregunta15">
+                    <label class="form-check-label">No</label>
+                </div>
             </div>
             <div *ngIf="form.get('pregunta15')?.errors && form.get('pregunta15')?.invalid && form.get('pregunta15')?.touched">
                 <p class="error-rad" *ngIf="form.get('pregunta15')?.hasError('required')">
@@ -270,8 +285,9 @@
             </div>
         </div>
 
-        <div>
-            <button type="submit">Enviar</button>
+        <div class="d-grid gap-2 d-md-block grup-button mt-4 mb-4">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <button routerLink="../" class="btn btn-danger">Cancelar</button>
         </div>
     </form>
 </div>
