@@ -5,8 +5,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EscalaYesavageComponent } from './escala-yesavage/escala-yesavage.component';
-import { TestEscalaYesavageComponent } from './test-escala-yesavage/test-escala-yesavage.component';
+import { EscalaYesavageComponent } from './escala_yesavage/escala-yesavage/escala-yesavage.component';
+import { TestEscalaYesavageComponent } from './escala_yesavage/test-escala-yesavage/test-escala-yesavage.component';
 
 @NgModule({
   declarations: [
