@@ -1,10 +1,20 @@
 ul {
-    border: 1 px solid #ccc;
     padding: 10px;
     margin: 0px;
+    
 }
 
 ul li {
+    border: 10 px solid #0000;
  padding: 10px;
  margin: 0px;
+ list-style-type: none;
+ text-align:left;
+
+}
+
+.colores{
+  background-color: white;
+  width: 100%;
+  color: black;
 }
