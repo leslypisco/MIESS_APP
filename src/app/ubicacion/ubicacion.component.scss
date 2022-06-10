@@ -19,6 +19,11 @@
     text-align: center;
     display: inline-block;
 }
+nav a{
+    text-decoration:none;
+    color:inherit;
+    font-size:14px;
+    } 
 h2{
     text-align: center;
 }
@@ -42,3 +47,28 @@ header{
 footer{
     margin-top: 20%;
 }
+.topnav {
+    background-color: #2baee2;
+    overflow: hidden;
+    
+  }
+  .topnav a {
+    float: left;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  
+  .topnav a.active {
+    background-color: #2baee2;
+    color: rgb(3, 3, 3);
+  }
