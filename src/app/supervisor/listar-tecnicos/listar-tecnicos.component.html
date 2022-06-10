@@ -29,12 +29,15 @@
     <div class="colores">
     <ul>
       <li *ngFor="let element of data">
-              <strong>{{element.name}}</strong><br>
-              <div>
-              {{element.phone}}</div>
-              <button>VER INFO</button>
+              {{element.name}}<br>
+              <div class="numero">
+                <span>
+              {{element.phone}}</span></div>
+              <button class="ver">VER INFO</button>
+              
       </li>
     </ul>
+    <br><br>
   </div>
 
 </nav>
