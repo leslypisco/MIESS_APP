@@ -1,14 +1,24 @@
-<div class="container" class="mt-3 mb-4">
+<div class="d-grid col-11 col-sm-6 mx-auto mt-5 mb-4">
+
+    <div style="background-color: #0d6efd; color: white; margin:20px; border-radius: 10px; display: flex;">
+        <p style="margin-left:2%; font-size: unset; font-weight: bold; letter-spacing: 2px; margin: 8% 2% 0 4% ">ÍNDICE DE BARTHEL</p>
+        <span class="example-spacer"></span>
+        <img style="padding: 5px;" src="https://i.eldiario.com.ec/fotos-manabi-ecuador/2009/mies.png" width="80px" alt="">
+
+    </div>
+
     <form [formGroup]="form" novalidate (ngSubmit)="save($event)" class="d-grid col-11 col-sm-6 mx-auto">
+        <p style="text-align: right; margin-right: 10%;"><b>Tiempo transcurrido: {{hora}}:{{minutos}}:{{segundos}} </b>
+        </p><button hidden (click)="start()">Empezar</button>
         <div class="sec-preg">
             <label class="pregunta">1. ¿Esta Ud. básicamente satisfecho con su vida?</label>
             <div class="form-check">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta1" value="si" formControlName="pregunta1">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta1" value="si" formControlName="pregunta1">
                     <label class="form-check-label">Si</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta1" value="no" formControlName="pregunta1">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta1" value="no" formControlName="pregunta1">
                     <label class="form-check-label">No</label>
                 </div>
             </div>
@@ -23,11 +33,11 @@
             <label class="pregunta">2. ¿Ha disminuido o abandonado muchos de sus intereses o actividades previas?</label>
             <div class="form-check">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta2" value="si" formControlName="pregunta2">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta2" value="si" formControlName="pregunta2">
                     <label class="form-check-label">Si</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta2" value="no" formControlName="pregunta2">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta2" value="no" formControlName="pregunta2">
                     <label class="form-check-label">No</label>
                 </div>
             </div>
@@ -42,11 +52,11 @@
             <label class="pregunta">3. ¿Siente que su vida está vacía?</label>
             <div class="form-check">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta3" value="si" formControlName="pregunta3">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta3" value="si" formControlName="pregunta3">
                     <label class="form-check-label">Si</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta3" value="no" formControlName="pregunta3">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta3" value="no" formControlName="pregunta3">
                     <label class="form-check-label">No</label>
                 </div>
             </div>
@@ -61,11 +71,11 @@
             <label class="pregunta">4. ¿Se siente aburrido frecuentemente?</label>
             <div class="form-check">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta4" value="si" formControlName="pregunta4">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta4" value="si" formControlName="pregunta4">
                     <label class="form-check-label">Si</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta4" value="no" formControlName="pregunta4">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta4" value="no" formControlName="pregunta4">
                     <label class="form-check-label">No</label>
                 </div>
             </div>
@@ -80,11 +90,11 @@
             <label class="pregunta">5. ¿Está Ud. de buen ánimo la mayoría del tiempo?</label>
             <div class="form-check">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta5" value="si" formControlName="pregunta5">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta5" value="si" formControlName="pregunta5">
                     <label class="form-check-label">Si</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta5" value="no" formControlName="pregunta5">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta5" value="no" formControlName="pregunta5">
                     <label class="form-check-label">No</label>
                 </div>
             </div>
@@ -99,11 +109,11 @@
             <label class="pregunta">6. ¿Está preocupado o teme que algo malo le va a pasar?</label>
             <div class="form-check">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta6" value="si" formControlName="pregunta6">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta6" value="si" formControlName="pregunta6">
                     <label class="form-check-label">Si</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta6" value="no" formControlName="pregunta6">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta6" value="no" formControlName="pregunta6">
                     <label class="form-check-label">No</label>
                 </div>
             </div>
@@ -118,11 +128,11 @@
             <label class="pregunta">7. ¿Se siente feliz la mayor parte del tiempo?</label>
             <div class="form-check">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta7" value="si" formControlName="pregunta7">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta7" value="si" formControlName="pregunta7">
                     <label class="form-check-label">Si</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta7" value="no" formControlName="pregunta7">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta7" value="no" formControlName="pregunta7">
                     <label class="form-check-label">No</label>
                 </div>
             </div>
@@ -137,11 +147,11 @@
             <label class="pregunta">8. ¿Se siente con frecuencia desamparado?</label>
             <div class="form-check">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta8" value="si" formControlName="pregunta8">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta8" value="si" formControlName="pregunta8">
                     <label class="form-check-label">Si</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta8" value="no" formControlName="pregunta8">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta8" value="no" formControlName="pregunta8">
                     <label class="form-check-label">No</label>
                 </div>
             </div>
@@ -156,11 +166,11 @@
             <label class="pregunta">9. ¿Prefiere Ud. quedarse en casa a salir a hacer cosas nuevas?</label>
             <div class="form-check">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta9" value="si" formControlName="pregunta9">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta9" value="si" formControlName="pregunta9">
                     <label class="form-check-label">Si</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta9" value="no" formControlName="pregunta9">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta9" value="no" formControlName="pregunta9">
                     <label class="form-check-label">No</label>
                 </div>
             </div>
@@ -175,11 +185,11 @@
             <label class="pregunta">10. ¿Siente Ud. que tiene más problemas con su memoria que otras personas de su edad?</label>
             <div class="form-check">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta10" value="si" formControlName="pregunta10">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta10" value="si" formControlName="pregunta10">
                     <label class="form-check-label">Si</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta10" value="no" formControlName="pregunta10">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta10" value="no" formControlName="pregunta10">
                     <label class="form-check-label">No</label>
                 </div>
             </div>
@@ -194,11 +204,11 @@
             <label class="pregunta">11. ¿Cree Ud. que es maravilloso estar vivo?</label>
             <div class="form-check">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta11" value="si" formControlName="pregunta11">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta11" value="si" formControlName="pregunta11">
                     <label class="form-check-label">Si</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta11" value="no" formControlName="pregunta11">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta11" value="no" formControlName="pregunta11">
                     <label class="form-check-label">No</label>
                 </div>
             </div>
@@ -213,11 +223,11 @@
             <label class="pregunta">12. ¿Se siente inútil o despreciable como está Ud. actualmente?</label>
             <div class="form-check">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta12" value="si" formControlName="pregunta12">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta12" value="si" formControlName="pregunta12">
                     <label class="form-check-label">Si</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta12" value="no" formControlName="pregunta12">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta12" value="no" formControlName="pregunta12">
                     <label class="form-check-label">No</label>
                 </div>
             </div>
@@ -232,11 +242,11 @@
             <label class="pregunta">13. ¿Se siente lleno de energía?</label>
             <div class="form-check">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta13" value="si" formControlName="pregunta13">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta13" value="si" formControlName="pregunta13">
                     <label class="form-check-label">Si</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta13" value="no" formControlName="pregunta13">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta13" value="no" formControlName="pregunta13">
                     <label class="form-check-label">No</label>
                 </div>
             </div>
@@ -251,11 +261,11 @@
             <label class="pregunta">14. ¿Se encuentra sin esperanza ante su situación actual?</label>
             <div class="form-check">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta14" value="si" formControlName="pregunta14">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta14" value="si" formControlName="pregunta14">
                     <label class="form-check-label">Si</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta14" value="no" formControlName="pregunta14">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta14" value="no" formControlName="pregunta14">
                     <label class="form-check-label">No</label>
                 </div>
             </div>
@@ -270,11 +280,11 @@
             <label class="pregunta">15. ¿Cree Ud. que las otras personas están en general mejor que Usted?</label>
             <div class="form-check">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta15" value="si" formControlName="pregunta15">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta15" value="si" formControlName="pregunta15">
                     <label class="form-check-label">Si</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pregunta15" value="no" formControlName="pregunta15">
+                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta15" value="no" formControlName="pregunta15">
                     <label class="form-check-label">No</label>
                 </div>
             </div>
@@ -285,8 +295,8 @@
             </div>
         </div>
 
-        <div class="d-grid gap-2 d-md-block grup-button mt-4 mb-4">
-            <button type="submit" class="btn btn-primary">Guardar</button>
+        <div class="grup-button mt-4 mb-4">
+            <button (click)="stop()" type="submit" class="btn btn-primary">Guardar</button>
             <button routerLink="../" class="btn btn-danger">Cancelar</button>
         </div>
     </form>

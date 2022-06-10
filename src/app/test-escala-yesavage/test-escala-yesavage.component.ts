@@ -8,6 +8,13 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 })
 export class TestEscalaYesavageComponent implements OnInit {
 
+  public hora: number=0;
+  public minutos: number=0;
+  public segundos: number=0;
+
+  public coleccion:Array<any> = [];
+  public contador: any;
+
   form: FormGroup;
 
   constructor( private formBuilder:FormBuilder ) {
@@ -15,6 +22,34 @@ export class TestEscalaYesavageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  start(){
+    if (this.contador == undefined) {
+      this.contador = setInterval( () =>{
+        this.segundos +=1;
+        if (this.segundos == 60) {
+          this.segundos = 0;
+          this.minutos +=1;
+          if (this.minutos == 60) {
+            this.minutos =0;
+            this.hora +=1;
+            if (this.hora = 24) {
+              this.hora = 0;
+            }
+          }
+        }
+      }, 1000);
+    }
+    
+  }
+
+  stop(){
+    clearInterval(this.contador);
+    this.hora = this.hora;
+    this.minutos=this.minutos;
+    this.segundos=this.segundos;
+    this.contador=null;
   }
 
   buildForm() {
@@ -49,4 +84,9 @@ export class TestEscalaYesavageComponent implements OnInit {
     }
   }
 
+}
+interface crono{
+  hora:number;
+  minutos: number;
+  segundos: number;
 }
