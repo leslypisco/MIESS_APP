@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Allura&family=Dancing+Script:wght@700&family=Great+Vibes&family=Neonderthaw&family=Noto+Sans+JP:wght@900&family=Roboto+Condensed:wght@300;700&display=swap');
+:host {
+    margin: 0px 5%;
+    .grup-button {
+        text-align: center;
+
+        button {
+            margin: 0px 10px;
+        }
+    }
+    p{
+        color: #5a6978;
+        font-family: sans-serif;
+    }
+    h1 {
+        font-family: 'Abril Fatface', cursive;
+    }
+}
