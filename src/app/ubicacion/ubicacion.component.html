@@ -1,25 +1,33 @@
 <div class="container">
     <header>
-        
-        <h2> Ubicación del adulto mayor </h2>
+        <div class="topnav">
+            
+            <a class="active" href="#home"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+              </svg></a>
+              <h3 class="enca">Ubicación</h3> 
+          </div>
     </header>
 
     <body>
-      <nav>
-
-      </nav>
+        <h2>Ubicación del adulto mayor</h2>
         <div class="texto">
             <p class="primero">El adulto mayor puede relaizar el test con acompañamiento únicamente en su domicilio.</p>
 
             <p class="segundo">Antes de realizar los test debe informar sobre el sitio donde están llevando a cabo.</p>
         </div>
+        <form [formGroup]="form">
+            <p><input type="checkbox" id="cbox1" value="first_checkbox" formControlName = "check"> Asistido</p>
+            <p><input type="checkbox" id="cbox2" value="first_checkbox" formControlName = "check"> Independiente</p><br>
 
-        <div class="checkbox">
-            <label><input type="checkbox" id="cbox1" value="first_checkbox"> Asistido</label><br>
-            <br>
-            <label><input type="checkbox" id="cbox2" value="first_checkbox"> Independiente</label><br>
+        <div *ngIf="form.get('check')?.errors && form.get('check')?.dirty">
+            <p *ngIf="form.get('check')?.hasError('required')">
+                Es un campo requerido
+            </p>
         </div>
 
+        </form>
+            
     </body>
     <footer>
         <button class="continuar">CONTINUAR</button>
