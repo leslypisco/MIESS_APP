@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./observacion.component.scss']
 })
 export class ObservacionComponent implements OnInit {
-
-  constructor() { }
+  ImagePath: string;
+  constructor() {
+    //image location
+    this.ImagePath = '/assets/images/sample.jpg'
+   }
 
   ngOnInit(): void {
   }
