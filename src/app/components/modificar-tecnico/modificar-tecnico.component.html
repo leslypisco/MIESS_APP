@@ -1,0 +1,59 @@
+<nav class="navbar navbar-custom">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        Creacion de usuarios MIES
+        <img src="/assets/logo.png" alt="" width="50" height="34" class="d-inline-block align-text-top">
+      </a>
+    </div>
+</nav>
+
+<form [formGroup]="form" (ngSubmit)="save($event)">
+    <div class="container" *ngFor="let element of data">
+        
+        <a>
+            <br>
+            <input type="text" formControlName="name" class="form-control"  placeholder="Nombres" aria-label="default input example" value="{{element.name}}">
+            <div *ngIf="form.get('name')?.errors && form.get('name')?.dirty">
+                <p class="required-red" *ngIf="form.get('name')?.hasError('required')">*El nombre es un campo requerido</p>
+            </div>
+        </a>
+
+        <a>
+            <br>
+            <input type="text" formControlName="lastname" class="form-control"  placeholder="Apellidos" aria-label="default input example">
+            <div *ngIf="form.get('lastname')?.errors && form.get('lastname')?.dirty">
+                <p class="required-red" *ngIf="form.get('lastname')?.hasError('required')">*El apellido es un campo requerido</p>
+            </div>
+        </a>
+        <a>
+            <br>
+            <input type="number" formControlName="cedula" class="form-control"  placeholder="Cedula" aria-label="default input example">
+            <div *ngIf="form.get('cedula')?.errors && form.get('cedula')?.dirty">
+                <p class="required-red" *ngIf="form.get('cedula')?.hasError('required')">*La cedula es un campo requerido</p>
+            </div>
+        </a>
+        <a>
+            <br>
+            Fecha nacimiento
+            <input type="date" formControlName="date" class="form-control"  placeholder="Fecha de nacimiento" aria-label="default input example">
+            <div *ngIf="form.get('date')?.errors && form.get('date')?.dirty">
+                <p class="required-red" *ngIf="form.get('date')?.hasError('required')">*Fecha de nacimiento es un campo requerido</p>
+            </div>
+        </a>
+        <br>
+        <div class="form-control" >
+            <input type="radio" name="gender" formControlName="gender" value="masculino">Masculino <br>
+            <br>
+            <input type="radio" name="gender" formControlName="gender" value="femenino">Femenino <br>
+        </div>
+    
+        <br>
+        
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Registrar</button>
+            <button type="button" class="btn btn-danger">Cancelar</button>
+        </div>
+    </div>
+    
+    
+</form>

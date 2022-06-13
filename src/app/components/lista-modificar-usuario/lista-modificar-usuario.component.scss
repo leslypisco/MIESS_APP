@@ -1,0 +1,146 @@
+#old {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #old td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #old tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #old tr:hover {background-color: #ddd;}
+  
+  #old th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #f2f2f2;
+    color: rgb(68, 67, 67);
+  }
+  
+  #center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #old {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+#old td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+#old tr:nth-child(even){background-color: #f2f2f2;}
+  
+#old tr:hover {background-color: #ddd;}
+  
+#old th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #f2f2f2;
+    color: rgb(68, 67, 67);
+  }
+  
+#center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.navbar-custom {
+    background-color: rgba(0, 166, 255);
+    display: block;
+}
+
+a{
+    color: #fff;
+}
+
+p.required-red{
+    color: rgb(151, 0, 0)
+}
+
+.input-wrapper {
+	position: relative;}
+
+.input-icon-search {
+	color: #191919;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 12px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.input-icon-voice {
+	color: #191919;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 330px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.input-center{
+    text-align: center;
+}
+
+ul {
+    padding: 10px;
+    margin: 0px;
+    
+}
+
+ul li {
+    border: 10 px solid #0000;
+ padding: 10px;
+ margin: 0px;
+ list-style-type: none;
+ text-align:left;
+
+}
+
+.colores{
+  background-color: white;
+  width: 100%;
+  color: black;
+}
+.numero{
+    color: darkgrey;
+}
+ul li .ver{
+    float:right;
+    color: #ffff;
+    border-color: #4b6cb7;
+    background: #4b6cb7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #4b6cb7, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #4b6cb7, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+span.test{
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+}
+.btn {
+    cursor: pointer;
+    border: 1px solid white;
+    background-color: transparent;
+    height: 45px;
+    width: 35px;
+    color: green;
+}
+  
+  
+  
+  

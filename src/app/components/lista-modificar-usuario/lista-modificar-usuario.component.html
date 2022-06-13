@@ -1,0 +1,82 @@
+<nav class="navbar navbar-custom">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          Lista de adultos mayores
+          <img src="/assets/logo.png" alt="" width="50" height="34" class="d-inline-block align-text-top">
+        </a>
+    </div>
+    <ul ngbNav #nav="ngbNav" [activeId]="2" class="justify-content-center">
+        <li ngbDropdown class="nav-item ">
+            <a href (click)="false" class="nav-link navbar-toggler" ngbDropdownToggle>
+                <span class="navbar-toggler-icon"></span>
+            </a>
+          <div ngbDropdownMenu>
+            <div class="dropdown-divider"></div>
+            <button ngbDropdownItem routerLink="/crearTecnico">Crear Técnico</button>
+            <button ngbDropdownItem routerLink="/listaModificar">Modificar/ELiminar Técnico</button>
+            <button ngbDropdownItem>Cerrar Sesión</button>
+          </div>
+        </li>
+        <li ngbNavItem [disabled]="true" class="ms-auto">
+        </li>
+    </ul>
+        <form>
+            <div class="justify-content-center input-wrapper">
+                <input class="form-control input-center" type="search" placeholder="Buscar adulto mayor" aria-label="Search">
+                <svg xmlns="http://www.w3.org/2000/svg" class="input-icon-search" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic input-icon-voice" viewBox="0 0 16 16">
+                    <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
+                    <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z"/>
+                  </svg>
+            </div>
+        </form>
+    
+</nav>
+
+
+<ul>
+    <li>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Adulto mayor</th>
+                    <th scope="col">Estatus</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let element of data">
+                    <td>{{element.name}}
+                        <div class="numero">
+                            <span>Edad:
+                                {{element.edad}}</span> <br>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn" type="button" routerLink="/modificarTecnico/{{element.id}}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-clipboard2-check" viewBox="0 0 16 16">
+                            <path
+                                d="M9.5 0a.5.5 0 0 1 .5.5.5.5 0 0 0 .5.5.5.5 0 0 1 .5.5V2a.5.5 0 0 1-.5.5h-5A.5.5 0 0 1 5 2v-.5a.5.5 0 0 1 .5-.5.5.5 0 0 0 .5-.5.5.5 0 0 1 .5-.5h3Z" />
+                            <path
+                                d="M3 2.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 0 0-1h-.5A1.5 1.5 0 0 0 2 2.5v12A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5v-12A1.5 1.5 0 0 0 12.5 1H12a.5.5 0 0 0 0 1h.5a.5.5 0 0 1 .5.5v12a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5v-12Z" />
+                            <path
+                                d="M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3Z" />
+                        </svg>
+                        </button>
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-trash" viewBox="0 0 16 16">
+                            <path
+                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                            <path fill-rule="evenodd"
+                                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                        </svg>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+    </li>
+</ul>
