@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ADULTOMAYORComponent } from './adulto-mayor.component';
+import { MenuComponent } from './menu.component';
 
-describe('ADULTOMAYORComponent', () => {
-  let component: ADULTOMAYORComponent;
-  let fixture: ComponentFixture<ADULTOMAYORComponent>;
+describe('MenuComponent', () => {
+  let component: MenuComponent;
+  let fixture: ComponentFixture<MenuComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ADULTOMAYORComponent ]
+      declarations: [ MenuComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ADULTOMAYORComponent);
+    fixture = TestBed.createComponent(MenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
