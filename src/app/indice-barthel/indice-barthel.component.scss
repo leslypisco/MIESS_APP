@@ -1,72 +1,86 @@
-.contaniner{
+example-spacer {
+    flex: 1 1 auto;
+}
+
+.titulo {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+
+mat-toolbar {
+    background-color: blue;
+    color: white;
+}
+
+body {
+    margin-top: 10%;
+    font-size: 130%;
+
+}
+
+.contaniner {
     width: 100%;
     height: 100%;
 }
-.continuar{
+
+.continuar {
     background-color: blue;
     color: white;
     margin-left: 15%;
-    padding: 10px 10px;
+    padding: 7px 20px;
     text-align: center;
     display: inline-block;
-    
+
 }
-.cancelar{
+
+.cancelar {
     background-color: red;
     color: white;
     margin-left: 10%;
-    padding: 10px 10px;
+    padding: 7px 20px;
     text-align: center;
     display: inline-block;
 }
-h2{
+
+h2 {
     text-align: center;
 }
 
-#cbox1, #cbox2{
+#cbox1,
+#cbox2 {
     margin-left: 20%;
 }
-header{
-    margin-top: 30%;
-}
-.texto{
-   width: 80%;
-   margin-left: 10%;
-}
-.primero, .segundo{
-    text-align: center;
-}
-.checkbox{
-    margin: 10%;
-}
-footer{
-    margin-top: 20%;
+
+.texto {
+    width: 80%;
+    margin-left: 10%;
 }
 
-/* Add a black background color to the top navigation */
-.topnav {
-    background-color: blue;
-    overflow: hidden;
-  }
-  
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    float: left;
-    color: #f2f2f2;
+.primero,
+.segundo {
     text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  /* Add a color to the active/current link */
-  .topnav a.active {
-    background-color: blue;
-    color: white;
-  }
+}
+
+.checkbox {
+    margin-left: 10%;
+}
+
+.asistido {
+    margin: 8%;
+    text-align: center;
+}
+
+.independiente {
+    text-align: center;
+    margin: 8%;
+
+
+}
+
+footer {
+    margin-top: 15%;
+}

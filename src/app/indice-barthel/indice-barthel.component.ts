@@ -6,8 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./indice-barthel.component.scss']
 })
 export class IndiceBarthelComponent implements OnInit {
+  indice:string;
 
-  constructor() { }
+  constructor() { 
+    this.indice ="Indice Barthel"
+  }
 
   ngOnInit(): void {
   }

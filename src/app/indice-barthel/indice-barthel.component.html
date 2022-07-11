@@ -1,12 +1,7 @@
 <div class="container">
-    <header>
-        <div class="topnav">
-            <a class="active" href="#home"> INDICE DE BARTHEL</a>
-          </div>
-        <h2> INDICE DE BARTHEL </h2>
-    </header>
-
+    <app-menu [indice]="indice"></app-menu>
     <body>
+        <h1 class="titulo"></h1>
         <div class="texto">
             <p class="primero">Estas encuestas deben ser realizadas de preferencia por el adulto mayor</p>
 
@@ -14,18 +9,20 @@
         </div>
 
         <div class="checkbox">
-            <input type="radio"  id="cbox1" name="gender" formControlName="gender" value="Asistido"> Asistido 
-            <br>
-            <input type="radio"  id="cbox2" name="gender" formControlName="gender" value="Independiente"> Independiente 
-            <br>
-          
-            <br>
-           
+
+            <mat-radio-group aria-label="Select an option">
+                <mat-radio-button class="asistido" value="asistido">asistido</mat-radio-button>
+                <br>
+                <mat-radio-button class="independiente" value="independiente">independiente</mat-radio-button>
+            </mat-radio-group>
+
+
         </div>
 
     </body>
     <footer>
-        <button class="continuar">CONTINUAR</button>
-        <button class="cancelar">CANCELAR</button>
+        <button routerLink="/TestBarthel" class="continuar" mat-raised-button color="primary">CONTINUAR</button>
+        <button class="cancelar" mat-raised-button color="warn">CANCELAR</button>
     </footer>
 </div>
+
