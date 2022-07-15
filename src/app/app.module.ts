@@ -13,6 +13,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatInputModule} from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button'
 // search module
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { InformacionTecnicosComponent } from './informacion-tecnicos/informacion-tecnicos.component';
@@ -35,7 +36,8 @@ import { InformacionTecnicosComponent } from './informacion-tecnicos/informacion
     MatInputModule,
     NgbModule,
     FormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    MatButtonModule
     
   ],
   providers: [],
