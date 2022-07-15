@@ -1,0 +1,53 @@
+
+
+<p class="fixed-top">
+    <mat-toolbar class="bg-primary">
+      <span style="color: white;">MIES APP</span>
+    </mat-toolbar>
+
+
+    <mat-toolbar >
+     
+      <mat-icon routerLink="/info_tecnicos">person</mat-icon>
+      <span routerLink="/info_tecnicos">Cuenta</span>
+   
+
+      <mat-toolbar>
+        <span class="title-center">Robb</span>
+      </mat-toolbar>
+
+      <span class = "filler"></span>
+      <mat-icon (click)="openDialog()">settings</mat-icon>
+
+  </mat-toolbar>
+<!--busqueda-->
+  <mat-toolbar >
+     
+    <mat-icon routerLink="/info_tecnicos">search</mat-icon>
+ 
+    <mat-toolbar>
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Buscar">
+    </mat-toolbar>
+
+  </mat-toolbar>
+
+</p>
+<span class="material-symbols-outlined">
+  account_circle
+  </span>
+
+<div class="container" style="margin-top: 184px;">
+    <h2>Tecnicos registrados</h2>
+    <mat-list>
+      <mat-list-item *ngFor="let persona of data | filter:searchText">
+         <mat-icon matListAvatar >account_circle</mat-icon>
+          <div matLine>{{ persona.nombre }}</div>
+          <div matLine>Cedula: {{ persona.cedula }}</div>
+          <div matLine>Correo : {{ persona.correo }}</div>
+          <div matLine>Direccion : {{ persona.direccion }}</div>
+          <mat-icon routerLink="/info_tecnicos">visibility</mat-icon>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  
+<!--style="margin-top: 132px;" -->
