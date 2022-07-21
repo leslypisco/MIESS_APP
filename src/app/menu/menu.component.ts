@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -6,12 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  
-  public indice: String = "Pefil de Usuario";
+
+  @Input() indice: string | undefined;
 
   constructor() { }
-
+  
   ngOnInit(): void {
   }
 
+  
 }

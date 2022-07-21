@@ -3,8 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { ADULTOMAYORComponent } from './adulto-mayor/adulto-mayor.component';
-import { VistaComponent } from './vista/vista.component';
+import { MenuFormComponent } from './menu-form/menu-form.component';
 import { MenuComponent } from './menu/menu.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -12,8 +13,9 @@ import { MenuComponent } from './menu/menu.component';
   declarations: [
     AppComponent,
     ADULTOMAYORComponent,
-    VistaComponent,
-    MenuComponent
+    MenuFormComponent,
+    MenuComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
