@@ -6,7 +6,7 @@ ProyectoProgramacionAvanzada = require('./api/models/model'),
 //created model loading here
 bodyParser = require('body-parser');    
 // mongoose instance connection url connection 
-mongoose.Promise = global.Promise; mongoose.connect('mongodb+srv://Jachila1:*****@proyectoprogramacionava.v27ea.mongodb.net/test');   
+mongoose.Promise = global.Promise; mongoose.connect('mongodb+srv://Jachila1:*****@proyectoprogramacionava.v27ea.mongodb.net/ProyectoProgramacionAvanzada');   
 app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(bodyParser.json());   
 
