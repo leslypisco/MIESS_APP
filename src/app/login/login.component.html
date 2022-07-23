@@ -3,16 +3,19 @@
 </div>
 <h3 class="titles2">Sistema de Registro de Formularios MIES</h3><br>
 
-<form action="">
-    <div class="grid-cont">
-        <div>
-    <input type="text" placeholder="Usuario" name="uname" required>
-    </div>
-    <div>
-        <input type="password" placeholder="Contraseña" name="psw" required>
-    </div>
-    <div>
-        <button class="button">INGRESAR</button>
-    </div>
-    </div>
-</form>
+<div>
+    <form (submit)="signIn()">
+
+        <div class="grid-cont">
+            <div>
+                <input type="text" [(ngModel)] = "user.cedula" name= "uname" placeholder="Usuario" required autofocus>
+          
+                <input type="password" [(ngModel)] = "user.contrasenia" name="psw" placeholder="Contraseña" required
+                    autofocus>
+            </div>
+            <div>
+                <button type="submit" class="button">Iniciar Sesión</button>
+            </div>
+        </div>
+    </form>
+</div>
