@@ -1,6 +1,6 @@
-const Barthel = require("../models/Barthel");
-const TestBarthel = require("../models/Barthel");
-const Barthel2 = require("../models/Barthel");
+const Barthel = require("../models/user");
+const TestBarthel = require("../models/user");
+const Barthel2 = require("../models/user");
 
 
 exports.enviarTest = async (req, res) => {

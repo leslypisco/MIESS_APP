@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
-const BarthelSchema = mongoose.Schema({
+const userSchema = mongoose.Schema({
+
 
     _id: { type: String, required: true },
     tec_id: { type: String, required: true },
@@ -12,10 +13,8 @@ const BarthelSchema = mongoose.Schema({
     tec_correo: { type: String, required: true },
     tec_direccion: { type: String, required: true },
     tec_contrasenia: { type: String, required: true }
-
-
+}, {
+    timestamps: true
 });
 
-/* module.exports = mongoose.model('tecnico', BarthelSchema);
- */
-module.exports = model('tecnico', userSchema);
+module.exports = mongoose.model('tecnico', userSchema);
