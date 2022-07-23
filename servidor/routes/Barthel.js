@@ -3,6 +3,7 @@ const express = require('express');
 const router = express.Router();
 const barthelController = require('../controller/BarthelController');
 const user = require('../models/user');
+const jwt = require('jsonwebtoken');
 
 
 // api/productos
@@ -15,6 +16,11 @@ router.post('/signin', async (req, res) => {
     const { tec_cedula, tec_contrasenia } = req.body;
 
     const user = await User.findOne({tec_cedula});
+	
+	res.send(user);
+
+
+
     if (!user) return res.status(401).send('El tecnico no existe');
     if (user.tec_contrasenia !== tec_contrasenia) return res.status(401).send('Wrong Password');
 
