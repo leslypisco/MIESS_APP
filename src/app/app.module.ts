@@ -28,12 +28,12 @@ import { TokenInterceptorService } from './services/token.service';
 
   ],
   providers: [
-    /* AuthService,
+    AuthService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
       multi: true
-    } */
+    }
 
 
   ],

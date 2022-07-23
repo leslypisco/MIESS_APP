@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-
 export class AuthService {
 
   private URL = 'http://localhost:4000/LoginTecnico';
@@ -23,6 +22,6 @@ export class AuthService {
     return localStorage.getItem('token');
   }
 
-
+  
 
 }
