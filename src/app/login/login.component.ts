@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { MenuComponent } from '../menu/menu.component';
 
 @Component({
   selector: 'app-login',
@@ -13,8 +14,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   user = {
-    cedula: '',
-    contrasenia: ''
+    tec_cedula: '',
+    tec_contrasenia: '',
   }
 
   @Input() indice: string | undefined;
@@ -30,8 +31,10 @@ export class LoginComponent implements OnInit {
       .subscribe(res => {
         console.log(res)
         localStorage.setItem('token', res.token)
-        this.router.navigate(['/private'])
+        /* ir a la ventana de menu */
+        /* this.router.navigate(['/menu']) */
 
+      
       },
         err => console.log(err)
       )
