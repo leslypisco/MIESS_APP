@@ -1,18 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Allura&family=Dancing+Script:wght@700&family=Great+Vibes&family=Neonderthaw&family=Noto+Sans+JP:wght@900&family=Roboto+Condensed:wght@300;700&display=swap');
 :host {
-    margin: 0px 5%;
-    .grup-button {
-        text-align: center;
-
-        button {
-            margin: 0px 10px;
-        }
+    h1 {
+        font-size: 30px;
+        font-weight: bold;
     }
     p{
         color: #5a6978;
         font-family: sans-serif;
     }
-    h1 {
-        font-family: 'Abril Fatface', cursive;
+    .contenido {
+        padding: 10px;
+        margin: 5% 10%;
+        text-align: center;
+    }
+    .contenido h1 { margin-bottom: 48px; }
+    .button-row {text-align: center;}
+    .button-row button {
+        margin: 5px 8px;
+        width: 135px;
+    }
+    .topnav {
+        overflow: hidden;  
+    }
+    .topnav a {
+        float: left;
+        color: #000000;
+        text-align: center;
+        padding: 10px 16px;
+        text-decoration: none;
+    }
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+    .topnav a.active {
+        background-color: #59BCED;
+        color: #fff;
     }
 }

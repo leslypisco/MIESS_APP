@@ -1,303 +1,236 @@
-<div style="background-color: #0d6efd; color: white; ;display: flex;">
-    <p style="color:white;margin-left: 2%; font-size: unset; font-weight: bold; letter-spacing: 2px; margin-right: 70%; margin-top: 2%;">ÍNDICE DE BARTHEL</p>
-    <span class="example-spacer"></span>
-    <img style="padding: 5px" src="https://i.eldiario.com.ec/fotos-manabi-ecuador/2009/mies.png" width="80px" alt="">
+<header>
+    <div class="topnav">
+        <a class="active" href="#home">
+            <mat-icon>keyboard_backspace</mat-icon>
+        </a>
+        <app-menu [indice]="indice"></app-menu>
+    </div>
+</header>
 
-</div>
-<div class="d-grid col-11 col-sm-6 mx-auto mt-5 mb-4">
-    <form [formGroup]="form" novalidate (ngSubmit)="save($event)" class="d-grid col-11 col-sm-6 mx-auto">
-        <p style="text-align: right; margin-right: 10%;"><b>Tiempo transcurrido: {{hora}}:{{minutos}}:{{segundos}} </b>
-        </p><button hidden (click)="start()">Empezar</button>
-        <div class="sec-preg">
-            <label class="pregunta">1. ¿Esta Ud. básicamente satisfecho con su vida?</label>
-            <div class="form-check">
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta1" value="si" formControlName="pregunta1">
-                    <label class="form-check-label">Si</label>
-                </div>
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta1" value="no" formControlName="pregunta1">
-                    <label class="form-check-label">No</label>
-                </div>
-            </div>
-            <div *ngIf="form.get('pregunta1')?.errors && form.get('pregunta1')?.invalid && form.get('pregunta1')?.touched">
-                <p class="error-rad" *ngIf="form.get('pregunta1')?.hasError('required')">
-                    Debe seleccionar una opción.
+<div class="container" style="background-color: #f4f8fa;">
+    <div class="contenido">
+        <form [formGroup]="formularioTest" novalidate (ngSubmit)="save($event)">
+
+            <div>
+                <p style="text-align: right;">
+                    <b>Tiempo transcurrido: {{hr}}:{{min}}:{{seg}}</b>
                 </p>
             </div>
-        </div>
-
-        <div class="sec-preg">
-            <label class="pregunta">2. ¿Ha disminuido o abandonado muchos de sus intereses o actividades previas?</label>
-            <div class="form-check">
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta2" value="si" formControlName="pregunta2">
-                    <label class="form-check-label">Si</label>
-                </div>
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta2" value="no" formControlName="pregunta2">
-                    <label class="form-check-label">No</label>
-                </div>
-            </div>
-            <div *ngIf="form.get('pregunta2')?.errors && form.get('pregunta2')?.invalid && form.get('pregunta2')?.touched">
-                <p class="error-rad" *ngIf="form.get('pregunta2')?.hasError('required')">
-                    Debe seleccionar una opción.
-                </p>
-            </div>
-        </div>
-
-        <div class="sec-preg">
-            <label class="pregunta">3. ¿Siente que su vida está vacía?</label>
-            <div class="form-check">
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta3" value="si" formControlName="pregunta3">
-                    <label class="form-check-label">Si</label>
-                </div>
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta3" value="no" formControlName="pregunta3">
-                    <label class="form-check-label">No</label>
+    
+            <!-------------- PREGUNTA 1 -------------->
+            <div class="sec-preg">
+                <label class="pregunta">1. ¿Esta Ud. básicamente satisfecho con su vida?</label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="pregunta1">
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="si">Si</mat-radio-button>
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="No">No</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="formularioTest.get('pregunta1')?.errors && formularioTest.get('pregunta1')?.invalid && formularioTest.get('pregunta1')?.touched">
+                    <p class="error-rad" *ngIf="formularioTest.get('pregunta1')?.hasError('required')">
+                        Debe seleccionar una opción.
+                    </p>
                 </div>
             </div>
-            <div *ngIf="form.get('pregunta3')?.errors && form.get('pregunta3')?.invalid && form.get('pregunta3')?.touched">
-                <p class="error-rad" *ngIf="form.get('pregunta3')?.hasError('required')">
-                    Debe seleccionar una opción.
-                </p>
-            </div>
-        </div>
-
-        <div class="sec-preg">
-            <label class="pregunta">4. ¿Se siente aburrido frecuentemente?</label>
-            <div class="form-check">
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta4" value="si" formControlName="pregunta4">
-                    <label class="form-check-label">Si</label>
-                </div>
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta4" value="no" formControlName="pregunta4">
-                    <label class="form-check-label">No</label>
+    
+            <!-------------- PREGUNTA 2 -------------->
+            <div class="sec-preg">
+                <label class="pregunta">2. ¿Ha disminuido o abandonado muchos de sus intereses o actividades previas?</label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="pregunta2">
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="Si">Si</mat-radio-button>
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="no">No</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="formularioTest.get('pregunta2')?.errors && formularioTest.get('pregunta2')?.invalid && formularioTest.get('pregunta2')?.touched">
+                    <p class="error-rad" *ngIf="formularioTest.get('pregunta2')?.hasError('required')">
+                        Debe seleccionar una opción.
+                    </p>
                 </div>
             </div>
-            <div *ngIf="form.get('pregunta4')?.errors && form.get('pregunta4')?.invalid && form.get('pregunta4')?.touched">
-                <p class="error-rad" *ngIf="form.get('pregunta4')?.hasError('required')">
-                    Debe seleccionar una opción.
-                </p>
-            </div>
-        </div>
-
-        <div class="sec-preg">
-            <label class="pregunta">5. ¿Está Ud. de buen ánimo la mayoría del tiempo?</label>
-            <div class="form-check">
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta5" value="si" formControlName="pregunta5">
-                    <label class="form-check-label">Si</label>
-                </div>
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta5" value="no" formControlName="pregunta5">
-                    <label class="form-check-label">No</label>
+    
+            <!-------------- PREGUNTA 3 -------------->
+            <div class="sec-preg">
+                <label class="pregunta">3. ¿Siente que su vida está vacía?</label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="pregunta3">
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="Si">Si</mat-radio-button>
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="no">No</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="formularioTest.get('pregunta3')?.errors && formularioTest.get('pregunta3')?.invalid && formularioTest.get('pregunta3')?.touched">
+                    <p class="error-rad" *ngIf="formularioTest.get('pregunta3')?.hasError('required')">
+                        Debe seleccionar una opción.
+                    </p>
                 </div>
             </div>
-            <div *ngIf="form.get('pregunta5')?.errors && form.get('pregunta5')?.invalid && form.get('pregunta5')?.touched">
-                <p class="error-rad" *ngIf="form.get('pregunta5')?.hasError('required')">
-                    Debe seleccionar una opción.
-                </p>
-            </div>
-        </div>
-
-        <div class="sec-preg">
-            <label class="pregunta">6. ¿Está preocupado o teme que algo malo le va a pasar?</label>
-            <div class="form-check">
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta6" value="si" formControlName="pregunta6">
-                    <label class="form-check-label">Si</label>
-                </div>
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta6" value="no" formControlName="pregunta6">
-                    <label class="form-check-label">No</label>
+    
+            <!-------------- PREGUNTA 4 -------------->
+            <div class="sec-preg">
+                <label class="pregunta">4. ¿Se siente aburrido frecuentemente?</label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="pregunta4">
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="Si">Si</mat-radio-button>
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="no">No</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="formularioTest.get('pregunta4')?.errors && formularioTest.get('pregunta4')?.invalid && formularioTest.get('pregunta4')?.touched">
+                    <p class="error-rad" *ngIf="formularioTest.get('pregunta4')?.hasError('required')">
+                        Debe seleccionar una opción.
+                    </p>
                 </div>
             </div>
-            <div *ngIf="form.get('pregunta6')?.errors && form.get('pregunta6')?.invalid && form.get('pregunta6')?.touched">
-                <p class="error-rad" *ngIf="form.get('pregunta6')?.hasError('required')">
-                    Debe seleccionar una opción.
-                </p>
-            </div>
-        </div>
-
-        <div class="sec-preg">
-            <label class="pregunta">7. ¿Se siente feliz la mayor parte del tiempo?</label>
-            <div class="form-check">
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta7" value="si" formControlName="pregunta7">
-                    <label class="form-check-label">Si</label>
-                </div>
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta7" value="no" formControlName="pregunta7">
-                    <label class="form-check-label">No</label>
+    
+            <!-------------- PREGUNTA 5 -------------->
+            <div class="sec-preg">
+                <label class="pregunta">5. ¿Está Ud. de buen ánimo la mayoría del tiempo?</label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="pregunta5">
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="si">Si</mat-radio-button>
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="No">No</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="formularioTest.get('pregunta5')?.errors && formularioTest.get('pregunta5')?.invalid && formularioTest.get('pregunta5')?.touched">
+                    <p class="error-rad" *ngIf="formularioTest.get('pregunta5')?.hasError('required')">
+                        Debe seleccionar una opción.
+                    </p>
                 </div>
             </div>
-            <div *ngIf="form.get('pregunta7')?.errors && form.get('pregunta7')?.invalid && form.get('pregunta7')?.touched">
-                <p class="error-rad" *ngIf="form.get('pregunta7')?.hasError('required')">
-                    Debe seleccionar una opción.
-                </p>
-            </div>
-        </div>
-
-        <div class="sec-preg">
-            <label class="pregunta">8. ¿Se siente con frecuencia desamparado?</label>
-            <div class="form-check">
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta8" value="si" formControlName="pregunta8">
-                    <label class="form-check-label">Si</label>
-                </div>
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta8" value="no" formControlName="pregunta8">
-                    <label class="form-check-label">No</label>
+    
+            <!-------------- PREGUNTA 6 -------------->
+            <div class="sec-preg">
+                <label class="pregunta">6. ¿Está preocupado o teme que algo malo le va a pasar?</label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="pregunta6">
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="Si">Si</mat-radio-button>
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="no">No</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="formularioTest.get('pregunta6')?.errors && formularioTest.get('pregunta6')?.invalid && formularioTest.get('pregunta6')?.touched">
+                    <p class="error-rad" *ngIf="formularioTest.get('pregunta6')?.hasError('required')">
+                        Debe seleccionar una opción.
+                    </p>
                 </div>
             </div>
-            <div *ngIf="form.get('pregunta8')?.errors && form.get('pregunta8')?.invalid && form.get('pregunta8')?.touched">
-                <p class="error-rad" *ngIf="form.get('pregunta8')?.hasError('required')">
-                    Debe seleccionar una opción.
-                </p>
-            </div>
-        </div>
-
-        <div class="sec-preg">
-            <label class="pregunta">9. ¿Prefiere Ud. quedarse en casa a salir a hacer cosas nuevas?</label>
-            <div class="form-check">
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta9" value="si" formControlName="pregunta9">
-                    <label class="form-check-label">Si</label>
-                </div>
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta9" value="no" formControlName="pregunta9">
-                    <label class="form-check-label">No</label>
+    
+            <!-------------- PREGUNTA 7 -------------->
+            <div class="sec-preg">
+                <label class="pregunta">7. ¿Se siente feliz la mayor parte del tiempo?</label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="pregunta7">
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="si">Si</mat-radio-button>
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="No">No</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="formularioTest.get('pregunta7')?.errors && formularioTest.get('pregunta7')?.invalid && formularioTest.get('pregunta7')?.touched">
+                    <p class="error-rad" *ngIf="formularioTest.get('pregunta7')?.hasError('required')">
+                        Debe seleccionar una opción.
+                    </p>
                 </div>
             </div>
-            <div *ngIf="form.get('pregunta9')?.errors && form.get('pregunta9')?.invalid && form.get('pregunta9')?.touched">
-                <p class="error-rad" *ngIf="form.get('pregunta9')?.hasError('required')">
-                    Debe seleccionar una opción.
-                </p>
-            </div>
-        </div>
-
-        <div class="sec-preg">
-            <label class="pregunta">10. ¿Siente Ud. que tiene más problemas con su memoria que otras personas de su edad?</label>
-            <div class="form-check">
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta10" value="si" formControlName="pregunta10">
-                    <label class="form-check-label">Si</label>
-                </div>
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta10" value="no" formControlName="pregunta10">
-                    <label class="form-check-label">No</label>
-                </div>
-              
-              </div>
-            <div *ngIf="form.get('pregunta10')?.errors && form.get('pregunta10')?.invalid && form.get('pregunta10')?.touched">
-                <p class="error-rad" *ngIf="form.get('pregunta10')?.hasError('required')">
-                    Debe seleccionar una opción.
-                </p>
-            </div>
-             </div>
-
-        <div class="sec-preg">
-            <label class="pregunta">11. ¿Cree Ud. que es maravilloso estar vivo?</label>
-            <div class="form-check">
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta11" value="si" formControlName="pregunta11">
-                    <label class="form-check-label">Si</label>
-                </div>
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta11" value="no" formControlName="pregunta11">
-                    <label class="form-check-label">No</label>
+    
+            <!-------------- PREGUNTA 8 -------------->
+            <div class="sec-preg">
+                <label class="pregunta">8. ¿Se siente con frecuencia desamparado?</label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="pregunta8">
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="Si">Si</mat-radio-button>
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="no">No</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="formularioTest.get('pregunta8')?.errors && formularioTest.get('pregunta8')?.invalid && formularioTest.get('pregunta8')?.touched">
+                    <p class="error-rad" *ngIf="formularioTest.get('pregunta8')?.hasError('required')">
+                        Debe seleccionar una opción.
+                    </p>
                 </div>
             </div>
-            <div *ngIf="form.get('pregunta11')?.errors && form.get('pregunta11')?.invalid && form.get('pregunta11')?.touched">
-                <p class="error-rad" *ngIf="form.get('pregunta11')?.hasError('required')">
-                    Debe seleccionar una opción.
-                </p>
-            </div>
-        </div>
-
-        <div class="sec-preg">
-            <label class="pregunta">12. ¿Se siente inútil o despreciable como está Ud. actualmente?</label>
-            <div class="form-check">
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta12" value="si" formControlName="pregunta12">
-                    <label class="form-check-label">Si</label>
-                </div>
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta12" value="no" formControlName="pregunta12">
-                    <label class="form-check-label">No</label>
+    
+            <!-------------- PREGUNTA 9 -------------->
+            <div class="sec-preg">
+                <label class="pregunta">9. ¿Prefiere Ud. quedarse en casa a salir a hacer cosas nuevas?</label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="pregunta9">
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="Si">Si</mat-radio-button>
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="no">No</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="formularioTest.get('pregunta9')?.errors && formularioTest.get('pregunta9')?.invalid && formularioTest.get('pregunta9')?.touched">
+                    <p class="error-rad" *ngIf="formularioTest.get('pregunta9')?.hasError('required')">
+                        Debe seleccionar una opción.
+                    </p>
                 </div>
             </div>
-            <div *ngIf="form.get('pregunta12')?.errors && form.get('pregunta12')?.invalid && form.get('pregunta12')?.touched">
-                <p class="error-rad" *ngIf="form.get('pregunta12')?.hasError('required')">
-                    Debe seleccionar una opción.
-                </p>
-            </div>
-        </div>
-
-        <div class="sec-preg">
-            <label class="pregunta">13. ¿Se siente lleno de energía?</label>
-            <div class="form-check">
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta13" value="si" formControlName="pregunta13">
-                    <label class="form-check-label">Si</label>
-                </div>
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta13" value="no" formControlName="pregunta13">
-                    <label class="form-check-label">No</label>
+    
+            <!-------------- PREGUNTA 10 -------------->
+            <div class="sec-preg">
+                <label class="pregunta">10. ¿Siente Ud. que tiene más problemas con su memoria que otras personas de su edad?</label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="pregunta10">
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="Si">Si</mat-radio-button>
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="no">No</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="formularioTest.get('pregunta10')?.errors && formularioTest.get('pregunta10')?.invalid && formularioTest.get('pregunta10')?.touched">
+                    <p class="error-rad" *ngIf="formularioTest.get('pregunta10')?.hasError('required')">
+                        Debe seleccionar una opción.
+                    </p>
                 </div>
             </div>
-            <div *ngIf="form.get('pregunta13')?.errors && form.get('pregunta13')?.invalid && form.get('pregunta13')?.touched">
-                <p class="error-rad" *ngIf="form.get('pregunta13')?.hasError('required')">
-                    Debe seleccionar una opción.
-                </p>
-            </div>
-        </div>
-
-        <div class="sec-preg">
-            <label class="pregunta">14. ¿Se encuentra sin esperanza ante su situación actual?</label>
-            <div class="form-check">
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta14" value="si" formControlName="pregunta14">
-                    <label class="form-check-label">Si</label>
-                </div>
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta14" value="no" formControlName="pregunta14">
-                    <label class="form-check-label">No</label>
+    
+            <!-------------- PREGUNTA 11 -------------->
+            <div class="sec-preg">
+                <label class="pregunta">11. ¿Cree Ud. que es maravilloso estar vivo?</label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="pregunta11">
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="si">Si</mat-radio-button>
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="No">No</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="formularioTest.get('pregunta11')?.errors && formularioTest.get('pregunta11')?.invalid && formularioTest.get('pregunta11')?.touched">
+                    <p class="error-rad" *ngIf="formularioTest.get('pregunta11')?.hasError('required')">
+                        Debe seleccionar una opción.
+                    </p>
                 </div>
             </div>
-            <div *ngIf="form.get('pregunta14')?.errors && form.get('pregunta14')?.invalid && form.get('pregunta14')?.touched">
-                <p class="error-rad" *ngIf="form.get('pregunta14')?.hasError('required')">
-                    Debe seleccionar una opción.
-                </p>
-            </div>
-        </div>
-
-        <div class="sec-preg">
-            <label class="pregunta">15. ¿Cree Ud. que las otras personas están en general mejor que Usted?</label>
-            <div class="form-check">
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta15" value="si" formControlName="pregunta15">
-                    <label class="form-check-label">Si</label>
-                </div>
-                <div class="form-check">
-                    <input (click)="start()" class="form-check-input" type="radio" name="pregunta15" value="no" formControlName="pregunta15">
-                    <label class="form-check-label">No</label>
+    
+            <!-------------- PREGUNTA 12 -------------->
+            <div class="sec-preg">
+                <label class="pregunta">12. ¿Se siente inútil o despreciable como está Ud. actualmente?</label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="pregunta12">
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="Si">Si</mat-radio-button>
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="no">No</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="formularioTest.get('pregunta12')?.errors && formularioTest.get('pregunta12')?.invalid && formularioTest.get('pregunta12')?.touched">
+                    <p class="error-rad" *ngIf="formularioTest.get('pregunta12')?.hasError('required')">
+                        Debe seleccionar una opción.
+                    </p>
                 </div>
             </div>
-            <div *ngIf="form.get('pregunta15')?.errors && form.get('pregunta15')?.invalid && form.get('pregunta15')?.touched">
-                <p class="error-rad" *ngIf="form.get('pregunta15')?.hasError('required')">
-                    Debe seleccionar una opción.
-                </p>
+    
+            <!-------------- PREGUNTA 13 -------------->
+            <div class="sec-preg">
+                <label class="pregunta">13. ¿Se siente lleno de energía?</label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="pregunta13">
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="si">Si</mat-radio-button>
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="No">No</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="formularioTest.get('pregunta13')?.errors && formularioTest.get('pregunta13')?.invalid && formularioTest.get('pregunta13')?.touched">
+                    <p class="error-rad" *ngIf="formularioTest.get('pregunta13')?.hasError('required')">
+                        Debe seleccionar una opción.
+                    </p>
+                </div>
             </div>
-        </div>
-       
-
-        <div class="grup-button mt-4 mb-4">
-            <button (click)="stop()" type="submit" class="btn btn-primary">Guardar</button>
-            <button routerLink="../" class="btn btn-danger">Cancelar</button>
-        </div>
-    </form>
+    
+            <!-------------- PREGUNTA 14 -------------->
+            <div class="sec-preg">
+                <label class="pregunta">14. ¿Se encuentra sin esperanza ante su situación actual?</label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="pregunta14">
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="Si">Si</mat-radio-button>
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="no">No</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="formularioTest.get('pregunta14')?.errors && formularioTest.get('pregunta14')?.invalid && formularioTest.get('pregunta14')?.touched">
+                    <p class="error-rad" *ngIf="formularioTest.get('pregunta14')?.hasError('required')">
+                        Debe seleccionar una opción.
+                    </p>
+                </div>
+            </div>
+    
+            <!-------------- PREGUNTA 15 -------------->
+            <div class="sec-preg" style="margin-bottom: 25px;">
+                <label class="pregunta">15. ¿Cree Ud. que las otras personas están en general mejor que Usted?</label>
+                <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="pregunta15">
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="Si">Si</mat-radio-button>
+                    <mat-radio-button class="example-radio-button" (click)="start()" value="no">No</mat-radio-button>
+                </mat-radio-group>
+                <div *ngIf="formularioTest.get('pregunta15')?.errors && formularioTest.get('pregunta15')?.invalid && formularioTest.get('pregunta15')?.touched">
+                    <p class="error-rad" *ngIf="formularioTest.get('pregunta15')?.hasError('required')">
+                        Debe seleccionar una opción.
+                    </p>
+                </div>
+            </div>
+    
+            <div class="button-row">
+                <button (click)="stop()" type="submit" mat-raised-button color="primary">Guardar</button>
+                <button routerLink="../" mat-raised-button color="warn">Cancelar</button>
+            </div>
+        </form>
+    </div>
 </div>

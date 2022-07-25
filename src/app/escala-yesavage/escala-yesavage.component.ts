@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EscalaYesavageComponent implements OnInit {
 
-  constructor() { }
+  indice:string;
+
+  constructor() {
+    this.indice = "Escala Yesavage"
+  }
 
   ngOnInit(): void {
   }
