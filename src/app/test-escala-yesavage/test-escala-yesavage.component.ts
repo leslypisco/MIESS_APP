@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { YesavageService } from 'src/app/service/yesavage.service';
 import { TestYesavage } from 'src/app/models/test-yesavage';
 
@@ -21,7 +22,7 @@ export class TestEscalaYesavageComponent implements OnInit {
   estadoTest:boolean = true;
 
   // Varieble del ID encabezado
-  idEncabezado:any;
+  idEncabezado:string = '1';
 
   // Varieble del ID del Test Yesavage
   //idTest:string = '1';
@@ -45,17 +46,18 @@ export class TestEscalaYesavageComponent implements OnInit {
     private readonly _formBuilder: FormBuilder,
     private router : Router,
     private _testService: YesavageService,
+    private aRouter: ActivatedRoute,
+    private location:Location,
   ) { 
     this.indice = "Escala Yesavage";
-    this.idEncabezado = this.router.getCurrentNavigation()!.extras.state!['idEncabezado'];
     this.buildForm();
   }
 
   ngOnInit(): void {
     this.start();
     this.fechaInicio = this.fechaStartEnd();
+    this.idEncabezado =  this.aRouter.snapshot.paramMap.get("enc_id");
     console.log("Tiempo inicio es: "+ this.fechaInicio)
-    console.log("El id Encabezado es:" + this.idEncabezado)
   }
 
   fechaStartEnd(){
@@ -175,7 +177,8 @@ export class TestEscalaYesavageComponent implements OnInit {
 
       this._testService.guardarTest(TESTYESAVAGE).subscribe(data => {
         alert("PUNTAJE TOTAL: " + puntajeTotal);
-        this.router.navigate(['/app-menuform']) 
+        //this.router.navigate(['/']);
+        this.onBack()
       });
       
     } else {
@@ -194,5 +197,10 @@ export class TestEscalaYesavageComponent implements OnInit {
 
     console.log(puntajeTest);
     return puntajeTest;
+  }
+
+  onBack(){
+    this.location.back();
+    this.location.back();
   }
 }
