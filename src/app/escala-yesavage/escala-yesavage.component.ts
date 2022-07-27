@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-escala-yesavage',
@@ -9,19 +10,27 @@ import { Router } from '@angular/router';
 export class EscalaYesavageComponent implements OnInit {
 
   indice:string;
-  idEncabezado:any;
+  idEncabezado:string;
 
-
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private aRouter: ActivatedRoute,
+    private location:Location,
+  ) {
     this.indice = "Escala Yesavage"
-    this.idEncabezado = this.router.getCurrentNavigation()!.extras.state!['idEncabezado'];
   }
 
   ngOnInit(): void {
-    console.log("El id en test es:" + this.idEncabezado)
+    this.idEncabezado = this.aRouter.snapshot.paramMap.get("enc_id");
+    console.log(this.idEncabezado)
   }
 
-  enviar(){
-    this.router.navigate(['test-escala-yesavage'], {state: {idEncabezado: this.idEncabezado}});
+  btnContinuar(idEncabezado: any) {
+    // al hacer el clic en el botón se asigna el valor del input a la variable
+    this.router.navigate(['/test-escala-yesavage/'+this.idEncabezado])
+  }
+
+  onBack(){
+    this.location.back();
   }
 }
