@@ -10,16 +10,18 @@ import {MatButtonModule} from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IndiceBarthelComponent } from './indice-barthel/indice-barthel.component';
-import { TestEscalaYesavageComponent } from './test-escala-yesavage/test-escala-yesavage.component';
+
 import { MenuComponent } from './menu/menu.component';
+import { MenuFormComponent } from './menu-form/menu-form.component';
+
+import { HttpClientModule } from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
     TestBarthelComponent,
     IndiceBarthelComponent,
-    TestEscalaYesavageComponent,
     MenuComponent,
-    
+    MenuFormComponent    
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { MenuComponent } from './menu/menu.component';
     MatSliderModule,
     FormsModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA],

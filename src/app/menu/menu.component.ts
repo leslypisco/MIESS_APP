@@ -8,7 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class MenuComponent implements OnInit {
 
   @Input() indice: string;
-
+  
   constructor() { }
   
   ngOnInit(): void {
