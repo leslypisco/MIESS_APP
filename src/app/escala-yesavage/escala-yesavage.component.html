@@ -1,22 +1,17 @@
-<header>
-    <div class="topnav"> 
-        <a class="active" href="#home">
-            <mat-icon>keyboard_backspace</mat-icon>
-        </a>
-        <app-menu [indice]="indice"></app-menu>
-    </div>
-</header>
+<app-menu [indice]="indice"></app-menu>
 
-<div class="container">
-    <div class="contenido">
-        <h1>ESCALA DE YASAVAGE</h1>
-        <P>El test de <small>ESCALA DE YASAVAGE</small> debe ser respondido de manera independiente.</P>
+<div style="background-color: #f4f8fa; width: 100%;">
+    <div class="container">
+        <div class="contenido">
+            <h1>ESCALA DE YASAVAGE</h1>
+            <P>El test de <small>ESCALA DE YASAVAGE</small> debe ser respondido de manera independiente.</P>
+        </div>
     </div>
+
+    <footer>
+        <div class="button-row">
+            <button routerLink="../test-escala-yesavage" (click)="enviar()" mat-raised-button color="primary">Confirmar</button>
+            <button routerLink="/app-menuform" class="cancelar" mat-raised-button color="warn">Cancelar</button>
+        </div>
+    </footer>
 </div>
-
-<footer>
-    <div class="button-row">
-        <button routerLink="../test-escala-yesavage" mat-raised-button color="primary">Confirmar</button>
-        <button routerLink="../" class="cancelar" mat-raised-button color="warn">Cancelar</button>
-    </div>
-</footer>
