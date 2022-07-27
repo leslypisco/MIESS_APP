@@ -1,77 +1,69 @@
-<nav class="navbar navbar-custom">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          Lista de usuarios MIES
-          <img src="/assets/logo.png" alt="" width="50" height="34" class="d-inline-block align-text-top">
-        </a>
-    </div>
-    <ul ngbNav #nav="ngbNav" [activeId]="2" class="justify-content-center">
-        <li ngbDropdown class="nav-item ">
-            <a href (click)="false" class="nav-link navbar-toggler" ngbDropdownToggle>
-                <span class="navbar-toggler-icon"></span>
-            </a>
-          <div ngbDropdownMenu>
-            <div class="dropdown-divider"></div>
-            <button ngbDropdownItem routerLink="/crearTecnico">Crear Técnico</button>
-            <button ngbDropdownItem routerLink="/listaModificar">Modificar/ELiminar Técnico</button>
-            <button ngbDropdownItem>Cerrar Sesión</button>
-          </div>
-        </li>
-        <li ngbNavItem [disabled]="true" class="ms-auto">
-        </li>
-    </ul>
-        <form>
-            <div class="justify-content-center input-wrapper">
-                <input class="form-control input-center" type="search" placeholder="Buscar adulto mayor" aria-label="Search">
-                <svg xmlns="http://www.w3.org/2000/svg" class="input-icon-search" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mic input-icon-voice" viewBox="0 0 16 16">
-                    <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
-                    <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z"/>
-                  </svg>
-            </div>
-        </form>
-    
-</nav>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<ul>
-    <li>
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Adulto mayor</th>
-                <th scope="col">Informacion</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let element of data">
-                <td>
-                  <a href="/ubicacion/{{element.id}}">
-                  {{element.name}}</a>
-                    <div class="numero">
-                      <span>Edad:
-                        {{element.edad}}
-                      </span> <br>
-                    
-                      <span class="test">Test:
-                      {{element.test}}
-                      </span>
-                    </div>
-                </td>
-                <td><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                    class="bi bi-eye-fill" viewBox="0 0 16 16">
-                    <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
-                    <path
-                        d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
-                </svg>  </td>
-                    
-              </tr>
-            </tbody>
-          </table>
+<p class="fixed-top">
+  <mat-toolbar class="bg-primary">
+    <span style="color: white;">MIES APP</span>
+  </mat-toolbar>
+
+
+  <mat-toolbar>
+
+    <mat-icon routerLink="/">person</mat-icon>
+    <!--Direccionar -->
+    <span routerLink="/">Cuenta</span>
+
+    <mat-toolbar>
+      <span class="title-center"> Margoth Elisa</span>
+    </mat-toolbar>
+
+    <span class="filler"></span>
+    <mat-icon>settings</mat-icon>
+
+  </mat-toolbar>
+  <!--busqueda-->
+  <mat-toolbar>
+
+    <mat-toolbar>
+      <div class="input-icons">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <input style="text-align:center" class="form-control" type="text" name="search" [(ngModel)]="searchText"
+          autocomplete="off" placeholder="Buscar">
+      </div>
+         
             
-     
-            
-                   
-        </li>
-    </ul>
+    </mat-toolbar>
+    <button mat-mini-fab color="primary"  >
+      <mat-icon routerLink="/crearAdulto">note_add</mat-icon>
+    </button>
+  </mat-toolbar>
+
+
+
+</p>
+
+<span class="material-symbols-outlined">
+  account_circle
+</span>
+<div class="container" style="margin-top: 150px;">
+  <mat-list>
+    <mat-list-item *ngFor="let persona of data | filter:searchText">
+      <mat-icon matListAvatar>account_circle</mat-icon>
+      <div matLine>{{persona.am_nombres}} {{' '+persona.am_apellidos}}</div>
+      <div matLine>Genero: {{persona.am_genero}}</div>
+      <div matLine>Domicilio : {{persona.am_dir}}</div>
+      <div matLine>Edad : {{persona.am_edad}}</div>
+      <div matLine>Proximo test : sept, 2022</div>
+      <mat-icon routerLink="/modificarAdulto/{{persona._id}}">visibility</mat-icon>
+    </mat-list-item>
+  </mat-list>
+</div>
+
+<hr>
+
+<div class="center">
+  <span>
+    Adultos encontrados: {{adultosCount}}
+  </span>
+
+  <hr>
+</div>
