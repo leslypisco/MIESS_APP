@@ -1,74 +1,58 @@
-.contaniner{
-    width: 100%;
-    height: 100%;
+.container{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 10%;
 }
-.continuar{
-    background-color: #278bfd;
-    color: white;
-    margin-left: 25%;
-    padding: 10px 10px;
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    align-items:center;
+  }
+  
+.example-radio-button {
+    margin: 5px;
+}
+
+.button{
+    margin-top: 20%;
     text-align: center;
-    display: inline-block;
-    
 }
-.cancelar{
-    background-color: #e73027;
-    color: white;
+.botones {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 50px;
+    margin: 5%;
+}
+
+.alinearBotones {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+button {
+    width: 70%;
+    font-size: 15px;
     margin-left: 10%;
-    padding: 10px 10px;
-    text-align: center;
-    display: inline-block;
 }
-nav a{
-    text-decoration:none;
-    color:inherit;
-    font-size:14px;
-    } 
+
+
 h2{
     text-align: center;
 }
 
-#cbox1, #cbox2{
-    margin-left: 35%;
-}
-header{
-    margin-top: 30%;
-}
+
 .texto{
    width: 80%;
    margin-left: 10%;
+   text-align: center;
 }
-.primero, .segundo{
-    text-align: center;
-}
-.checkbox{
-    margin: 10%;
-}
-footer{
-    margin-top: 20%;
-}
-.topnav {
-    background-color: #2baee2;
-    overflow: hidden;
+.primero,.segundo{
+    color: #858484;
     
-  }
-  .topnav a {
-    float: left;
-    color: #000000;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  
-  
-  .topnav a.active {
-    background-color: #2baee2;
-    color: rgb(3, 3, 3);
-  }
+}
+
+.primero{
+    font-weight: 500;
+}
