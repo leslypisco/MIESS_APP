@@ -21,7 +21,7 @@ export class TestEscalaYesavageComponent implements OnInit {
   estadoTest:boolean = true;
 
   // Varieble del ID encabezado
-  idEncabezado:string = '1';
+  idEncabezado:any;
 
   // Varieble del ID del Test Yesavage
   //idTest:string = '1';
@@ -47,6 +47,7 @@ export class TestEscalaYesavageComponent implements OnInit {
     private _testService: YesavageService,
   ) { 
     this.indice = "Escala Yesavage";
+    this.idEncabezado = this.router.getCurrentNavigation()!.extras.state!['idEncabezado'];
     this.buildForm();
   }
 
@@ -54,6 +55,7 @@ export class TestEscalaYesavageComponent implements OnInit {
     this.start();
     this.fechaInicio = this.fechaStartEnd();
     console.log("Tiempo inicio es: "+ this.fechaInicio)
+    console.log("El id Encabezado es:" + this.idEncabezado)
   }
 
   fechaStartEnd(){
@@ -112,6 +114,7 @@ export class TestEscalaYesavageComponent implements OnInit {
     this.min;
     this.seg;
     this.contador=null;
+    
   }
 
   buildForm() {
@@ -172,7 +175,7 @@ export class TestEscalaYesavageComponent implements OnInit {
 
       this._testService.guardarTest(TESTYESAVAGE).subscribe(data => {
         alert("PUNTAJE TOTAL: " + puntajeTotal);
-        this.router.navigate(['app-menuform']);
+        this.router.navigate(['/app-menuform']) 
       });
       
     } else {
