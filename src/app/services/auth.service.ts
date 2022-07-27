@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  private URL = 'http://localhost:4000/LoginTecnico';
+  private URL = 'http://3.84.236.236:3000/tecnico';
   constructor(private http: HttpClient, private router: Router) { }
 
   signIn(user: any) {
